@@ -396,11 +396,11 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
     <title>Mengenal Tabel HTML</title>
 </head>
 <body>
-    <table border=1 cellpadding=0 cellspacing=5 align="left">
+    <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>-No-PC-<b></td> 
-            <td bgcolor="orange" style='text-align:center;'><b>-Total-Bytes-<b></td>
-			<td bgcolor="orange" style='text-align:center;'><b>-Total-Rate-<b></td>
+            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes<b></td>
+			<td bgcolor="orange" style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         <tr>
             <td bgcolor=<?php if($pc1d > "0"){ echo $bgcolor = "white"; }elseif($pc1d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>1<b></td>
@@ -448,11 +448,11 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?><b></td>			
     </table>
-	<table border=1 cellpadding=0 cellspacing=5 align="left">
+	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>-No-PC-<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>-Total-Bytes-<b></td>
-			<td bgcolor="orange"style='text-align:center;'><b>-Total-Rate-<b></td>
+            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes<b></td>
+			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         <tr>
             <td bgcolor=<?php if($pc10d > "0"){ echo $bgcolor = "white"; }elseif($pc10d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
@@ -546,11 +546,11 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ?></td>			
 		
     </table>
-	<table border=1 cellpadding=0 cellspacing=5 align="left">
+	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>-No-PC-<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>-Total-Bytes-</td>
-			<td bgcolor="orange"style='text-align:center;'><b>-Total-Rate-<b></td>
+            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes</td>
+			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         <tr>
             <td bgcolor=<?php if($pc19d > "0"){ echo $bgcolor = "white"; }elseif($pc19d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
@@ -627,43 +627,43 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 </body>
 </html> 
 </table>
-	<table border=1 cellpadding=0 cellspacing=5 align="left">	
+	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>-Rate-Down-Up-</td>
+			<td bgcolor="pink" style='text-align:center;color:black;'>Rate-Down-Up</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php 
                     echo " ".$mayuk." - ".$muyak."
                       " . $x['hapus']; 
                     ?></td>			
 					
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>-Total-Down-Up-</td>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>Total-Down-Up</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$downloadall." - ".$uploadall."
                       " . $x['hapus']; 
                     ?></td>
 				
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>-Total-Bytes-</td>
+			<td bgcolor="pink" style='text-align:center;color:black;'>Total-Bytes</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php 
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
 		
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>-IP-</td>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>IP</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo "".$ip."
                       " . $x['hapus']; 
                     ?></td>	
         </tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>-Resource-</td>
+			<td bgcolor="pink" style='text-align:center;color:black;'>Resource</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php
                     echo $_cpu_load." : " . $resource['cpu-load'] . "%<br/>
                     ".$_free_memory." : " . formatBytes($resource['free-memory'], 2) . "<br/>
                     ".$_free_hdd." : " . formatBytes($resource['free-hdd-space'], 2)
                     ?></td>
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>-Clock-</td>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>Clock</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo ucfirst($clock['date']) . " " . $clock['time'] . "<br>
                     ".$_uptime." : " . formatDTM($resource['uptime']);
