@@ -403,7 +403,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 			<td bgcolor="orange" style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         <tr>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><b>1<b></td>
+            <td bgcolor=<?php if($pc1d > "0"){ echo $bgcolor = "white"; }elseif($pc1d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>1<b></td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc1d." MiB 
                       " . $x['hapus']; 
@@ -413,7 +413,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>3<b></td>
+			<td bgcolor=<?php if($pc3d > "0"){ echo $bgcolor = "white"; }elseif($pc3d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>3<b></td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc3d." MiB 
                       " . $x['hapus']; 
@@ -423,7 +423,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>5<b></td>
+			<td bgcolor=<?php if($pc5d > "0"){ echo $bgcolor = "white"; }elseif($pc5d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>5<b></td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc5d." MiB 
                       " . $x['hapus']; 
@@ -432,13 +432,13 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     echo "".$pc5f."
                       " . $x['hapus']; 
                     ?></td>
-		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>b<b></td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+		</tr><tr><tr><tr><tr></tr><tr><tr><tr><tr>
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
                     echo "".$serverd." MiB 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
                     echo "".$serverf."
                       " . $x['hapus']; 
                     ?></td>
@@ -455,7 +455,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         <tr>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><b>10<b></td>
+            <td bgcolor=<?php if($pc10d > "0"){ echo $bgcolor = "white"; }elseif($pc10d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc10d." MiB 
                       " . $x['hapus']; 
@@ -465,7 +465,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>11<b></td>
+			<td bgcolor=<?php if($pc11d > "0"){ echo $bgcolor = "white"; }elseif($pc11d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>11<b></td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc11d." MiB 
                       " . $x['hapus']; 
@@ -475,7 +475,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>12</td>
+			<td bgcolor=<?php if($pc12d > "0"){ echo $bgcolor = "white"; }elseif($pc12d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>12</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc12d." MiB 
                       " . $x['hapus']; 
@@ -485,7 +485,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>13</td>
+			<td bgcolor=<?php if($pc13d > "0"){ echo $bgcolor = "white"; }elseif($pc13d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>13</td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc13d." MiB 
                       " . $x['hapus']; 
@@ -495,7 +495,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>14</td>
+			<td bgcolor=<?php if($pc14d > "0"){ echo $bgcolor = "white"; }elseif($pc14d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>14</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc14d." MiB 
                       " . $x['hapus']; 
@@ -505,7 +505,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>15</td>
+			<td bgcolor=<?php if($pc15d > "0"){ echo $bgcolor = "white"; }elseif($pc15d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>15</td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc15d." MiB 
                       " . $x['hapus']; 
@@ -515,7 +515,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>16</td>
+			<td bgcolor=<?php if($pc16d > "0"){ echo $bgcolor = "white"; }elseif($pc16d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>16</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc16d." MiB 
                       " . $x['hapus']; 
@@ -525,7 +525,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>17</td>
+			<td bgcolor=<?php if($pc17d > "0"){ echo $bgcolor = "white"; }elseif($pc17d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>17</td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc17d." MiB 
                       " . $x['hapus']; 
@@ -535,7 +535,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>18</td>
+			<td bgcolor=<?php if($pc18d > "0"){ echo $bgcolor = "white"; }elseif($pc18d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>18</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc18d." MiB 
                       " . $x['hapus']; 
@@ -553,7 +553,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         <tr>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><b>19</td>
+            <td bgcolor=<?php if($pc19d > "0"){ echo $bgcolor = "white"; }elseif($pc19d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc19d." MiB 
                       " . $x['hapus']; 
@@ -563,7 +563,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>20</td>
+			<td bgcolor=<?php if($pc20d > "0"){ echo $bgcolor = "white"; }elseif($pc20d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>20</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc20d." MiB 
                       " . $x['hapus']; 
@@ -573,7 +573,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>21</td>
+			<td bgcolor=<?php if($pc21d > "0"){ echo $bgcolor = "white"; }elseif($pc21d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>21</td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc21d." MiB 
                       " . $x['hapus']; 
@@ -583,7 +583,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>22</td>
+			<td bgcolor=<?php if($pc22d > "0"){ echo $bgcolor = "white"; }elseif($pc22d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>22</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc22d." MiB 
                       " . $x['hapus']; 
@@ -593,7 +593,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>23</td>
+			<td bgcolor=<?php if($pc23d > "0"){ echo $bgcolor = "white"; }elseif($pc23d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>23</td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc23d." MiB 
                       " . $x['hapus']; 
@@ -603,7 +603,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>24</td>
+			<td bgcolor=<?php if($pc24d > "0"){ echo $bgcolor = "white"; }elseif($pc24d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>24</td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
                     echo "".$pc24d." MiB 
                       " . $x['hapus']; 
@@ -613,7 +613,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>25</td>
+			<td bgcolor=<?php if($pc25d > "0"){ echo $bgcolor = "white"; }elseif($pc25d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>25</td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc25d." MiB 
                       " . $x['hapus']; 
@@ -674,8 +674,8 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 </html> 
 
 </table>
-	<table height=20px width=1130px border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="white" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> WIFI <?php 
+	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+           <td bgcolor="Wheat" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> WIFI <?php 
                     echo "".$wifi."
                       " . $x['hapus']; 
                     ?><i class="fa fa-wifi"></i> WIFI <?php 
@@ -688,20 +688,20 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 </div>
 </div>
          <div class="card-body overflow">
-<table id="tFilter" class="table table-bordered table-hover text-nowrap">
+<table height=100px width=100% id="tFilter" class="table table-bordered table-hover text-nowrap">
   <thead>
   <tr>
-    <th></th>
-    <th>Server</th>
-    <th>User</th>
-    <th class="text-right">Total</th>
-    <th class="text-right">Address</th>
-    <th class="text-right">Uptime</th>
-    <th class="text-right">Down</th>
-    <th class="text-right">Up</th>
-    <th class="text-right">Idle Time</th>
-    <th>Login By</th>
-    <th><?= $_comment ?></th>
+    <th bgcolor="orange" class="text-center"></th>
+    <th bgcolor="orange" class="text-center">Server</th>
+    <th bgcolor="orange" class="text-center">User</th>
+    <th bgcolor="orange" class="text-center">Total</th>
+    <th bgcolor="orange" class="text-center">Address</th>
+    <th bgcolor="orange" class="text-center">Uptime</th>
+    <th bgcolor="orange" class="text-center">Down</th>
+    <th bgcolor="orange"class="text-center">Up</th>
+    <th bgcolor="orange"class="text-center">Idle Time</th>
+    <th bgcolor="orange"class="text-center">Login By</th>
+    <th bgcolor="orange"class="text-center"><?= $_comment ?></th>
   </tr>
   </thead>
   <tbody>
@@ -725,16 +725,16 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";
 	echo "<tr>";
 	echo "<td style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
-	echo "<td><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
-	echo "<td><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
+	echo "<td style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
+	echo "<td style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
 	echo "<td style='text-align:right;'>" . $byte . " MiB</td>";
-	echo "<td style='text-align:right;'>" . $address . " </td>";
-	echo "<td style='text-align:right;'>" . $uptime . "</td>";
+	echo "<td style='text-align:center;'>" . $address . " </td>";
+	echo "<td style='text-align:center;'>" . $uptime . "</td>";
 	echo "<td style='text-align:right;'>" . $byteso . "</td>";
 	echo "<td style='text-align:right;'>" . $bytesi . "</td>";
-	echo "<td style='text-align:right;'>" . $idletime . "</td>";
-	echo "<td>" . $loginby . "</td>";
-	echo "<td>" . $comment . "</td>";
+	echo "<td style='text-align:center;'>" . $idletime . "</td>";
+	echo "<td style='text-align:center;'>" . $loginby . "</td>";
+	echo "<td style='text-align:left;'>" . $comment . "</td>";
 	echo "</tr>";
 }
 ?>
