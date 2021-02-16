@@ -431,29 +431,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$pc5f."
                       " . $x['hapus']; 
-                    ?></td>
-		</tr><tr><tr><tr><tr></tr><tr><tr><tr><tr>
-			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "".$serverd." MiB 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "".$serverf."
-                      " . $x['hapus']; 
-                    ?></td>
-		<tr><tr><tr>
-            <td bgcolor="orange"style='text-align:center;'><i class="fa fa-laptop"> PC </i><b><td bgcolor="orange"style='text-align:center;'> <?php 
-                    echo "".$warnet."
-                      " . $x['hapus']; 
-                    ?><b></td>			
-    </table>
-	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes<b></td>
-			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
-        </tr>
+                    ?></td>		
         <tr>
             <td bgcolor=<?php if($pc10d > "0"){ echo $bgcolor = "white"; }elseif($pc10d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
@@ -544,14 +522,6 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     echo "".$pc18f."
                       " . $x['hapus']; 
                     ?></td>			
-		
-    </table>
-	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes</td>
-			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
-        </tr>
         <tr>
             <td bgcolor=<?php if($pc19d > "0"){ echo $bgcolor = "white"; }elseif($pc19d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
@@ -624,6 +594,23 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ?></td>	
 		
     </table>
+			<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+	
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
+                    echo "".$serverd." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
+                    echo "".$serverf."
+                      " . $x['hapus']; 
+                    ?></td>
+		<tr>
+            <td bgcolor="orange"style='text-align:center;'><i class="fa fa-laptop"> PC </i><b><td bgcolor="orange"style='text-align:center;'> <?php 
+                    echo "".$warnet."
+                      " . $x['hapus']; 
+                    ?><b></td>	
+	</table>				
 </body>
 </html> 
 </table>
