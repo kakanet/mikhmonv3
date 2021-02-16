@@ -594,7 +594,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ?></td>	
 		
     </table>
-			<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+			<table height=50px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
 	
 			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
             <td bgcolor="orange" style='text-align:center;color:black;'><?php 
