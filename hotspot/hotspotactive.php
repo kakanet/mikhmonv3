@@ -592,10 +592,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     echo "".$pc25f."
                       " . $x['hapus']; 
                     ?></td>	
-		
-    </table>
-			<table height=50px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-	
+		<tr>
 			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
             <td bgcolor="orange" style='text-align:center;color:black;'><?php 
                     echo "".$serverd." MiB 
