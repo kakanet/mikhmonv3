@@ -63,7 +63,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div id="reloadHotspotActive">
 <div class="col-12">
 	<div class="card">
-		<div class="card-header">
+		<div class="card-header"style='text-align:center;'>
     		<h3><i class="fa fa-laptop"></i> PC-WARNET</h3>
         </div>
 		
@@ -649,7 +649,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 <div id="reloadHotspotActive">
 <div class="col-12">
 	<div class="card">
-		<div class="card-header">
+		<div class="card-header"style='text-align:center;'>
     		<h3><i class="fa fa-wifi"></i> HOTSPOT-WARNET</h3>
         </div>
 
@@ -667,9 +667,9 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 					echo $serveractive . " ";
 				}
 				if ($counthotspotactive < 2) {
-					echo "$counthotspotactive orang";
-				} elseif ($counthotspotactive > 1) {
 					echo "$counthotspotactive user";
+				} elseif ($counthotspotactive > 1) {
+					echo "$counthotspotactive users";
 				};
 				if ($serveractive == "") {
 				} else {
@@ -689,11 +689,11 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
     <th bgcolor="orange" class="text-center">Server</th>
     <th bgcolor="orange" class="text-center">User</th>
     <th bgcolor="orange" class="text-center">Total</th>
-    <th bgcolor="orange" class="text-center">Address</th>
+    <th bgcolor="orange" class="text-center">Idle Time</th>
     <th bgcolor="orange" class="text-center">Uptime</th>
     <th bgcolor="orange" class="text-center">Down</th>
     <th bgcolor="orange"class="text-center">Up</th>
-    <th bgcolor="orange"class="text-center">Idle Time</th>
+    <th bgcolor="orange"class="text-center">Address</th>
     <th bgcolor="orange"class="text-center">Login By</th>
     <th bgcolor="orange"class="text-center"><?= $_comment ?></th>
   </tr>
@@ -722,11 +722,11 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	echo "<td style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
 	echo "<td style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
 	echo "<td style='text-align:right;'>" . $byte . " MiB</td>";
-	echo "<td style='text-align:center;'>" . $address . " </td>";
+	echo "<td style='text-align:center;'>" . $idletime . " </td>";
 	echo "<td style='text-align:center;'>" . $uptime . "</td>";
 	echo "<td style='text-align:right;'>" . $byteso . "</td>";
 	echo "<td style='text-align:right;'>" . $bytesi . "</td>";
-	echo "<td style='text-align:center;'>" . $idletime . "</td>";
+	echo "<td style='text-align:center;'>" . $address . "</td>";
 	echo "<td style='text-align:center;'>" . $loginby . "</td>";
 	echo "<td style='text-align:left;'>" . $comment . "</td>";
 	echo "</tr>";
