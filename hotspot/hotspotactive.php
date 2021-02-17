@@ -661,15 +661,15 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ?><i class="fa fa-wifi"></i> non pc : <?php 
                     echo "".$wifif."
                       " . $x['hapus'];  
-                    ?><i class="fa fa-wifi"></i> wifi : <?php
+                    ?><br/>Pemakai hotspot : <?php
 				if ($serveractive == "") {
 				} else {
 					echo $serveractive . " ";
 				}
 				if ($counthotspotactive < 2) {
-					echo "$counthotspotactive item";
+					echo "$counthotspotactive orang";
 				} elseif ($counthotspotactive > 1) {
-					echo "$counthotspotactive items";
+					echo "$counthotspotactive user";
 				};
 				if ($serveractive == "") {
 				} else {
