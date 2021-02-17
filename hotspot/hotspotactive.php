@@ -64,22 +64,10 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 	<div class="card">
 		<div class="card-header">
-    		<h3><i class="fa fa-wifi"></i> <?= $_hotspot_active ?> <?php
-				if ($serveractive == "") {
-				} else {
-					echo $serveractive . " ";
-				}
-				if ($counthotspotactive < 2) {
-					echo "$counthotspotactive item";
-				} elseif ($counthotspotactive > 1) {
-					echo "$counthotspotactive items";
-				};
-				if ($serveractive == "") {
-				} else {
-					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
-				}
-				?>			</h3>
-        </div><?php
+    		<h3><i class="fa fa-laptop"></i> WARNET-SELONGAN</h3>
+        </div>
+		
+		<?php
 /*
  *  Copyright (C) 2018 Laksamadi Guko.
  *
@@ -657,15 +645,37 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 </body>
 </html> 
 
+<div class="row">
+<div id="reloadHotspotActive">
+<div class="col-12">
+	<div class="card">
+		<div class="card-header">
+    		<h3><i class="fa fa-wifi"></i> WIFI-SELONGAN</h3>
+        </div>
+
 </table>
 	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="Wheat" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> WIFI <?php 
+           <td bgcolor="Wheat" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> non pc : <?php 
                     echo "".$wifi."
                       " . $x['hapus']; 
-                    ?><i class="fa fa-wifi"></i> WIFI <?php 
+                    ?><i class="fa fa-wifi"></i> non pc : <?php 
                     echo "".$wifif."
                       " . $x['hapus'];  
-                    ?></td>
+                    ?><i class="fa fa-wifi"></i> wifi : <?php
+				if ($serveractive == "") {
+				} else {
+					echo $serveractive . " ";
+				}
+				if ($counthotspotactive < 2) {
+					echo "$counthotspotactive item";
+				} elseif ($counthotspotactive > 1) {
+					echo "$counthotspotactive items";
+				};
+				if ($serveractive == "") {
+				} else {
+					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
+				}
+				?></td>
 	</table>
    
 
