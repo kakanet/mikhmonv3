@@ -64,7 +64,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 	<div class="card">
 		<div class="card-header">
-    		<h3><i class="fa fa-laptop"></i> WARNET-SELONGAN</h3>
+    		<h3><i class="fa fa-laptop"></i> PC-WARNET</h3>
         </div>
 		
 		<?php
@@ -650,7 +650,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 <div class="col-12">
 	<div class="card">
 		<div class="card-header">
-    		<h3><i class="fa fa-wifi"></i> WIFI-SELONGAN</h3>
+    		<h3><i class="fa fa-wifi"></i> HOTSPOT-WARNET</h3>
         </div>
 
 </table>
