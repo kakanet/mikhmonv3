@@ -597,7 +597,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>	
 		<tr>
-			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "Tan"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "Tan"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>billing<b></td>
             <td bgcolor="Tan" style='text-align:center;color:black;'><?php 
                     echo "".$serverd." MiB 
                       " . $x['hapus']; 
@@ -607,7 +607,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		<tr>
-			<td bgcolor="silver" style='text-align:center;color:black;'><b>m<b></td>
+			<td bgcolor="silver" style='text-align:center;color:black;'><b>mama<b></td>
             <td bgcolor="silver" style='text-align:center;color:black;'><?php 
                     echo "".$mamad." MiB 
                       " . $x['hapus']; 
@@ -617,7 +617,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		<tr>
-			<td bgcolor="silver" style='text-align:center;color:black;'><b>k<b></td>
+			<td bgcolor="silver" style='text-align:center;color:black;'><b>kaka<b></td>
             <td bgcolor="silver" style='text-align:center;color:black;'><?php 
                     echo "".$kakad." MiB 
                       " . $x['hapus']; 
