@@ -64,7 +64,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 	<div class="card">
 		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-laptop"></i> PC-WARNET</h3>
+    		<h3><i class="fa fa-laptop"></i> BINDING-WARNET</h3>
         </div>
 		
 		<?php
