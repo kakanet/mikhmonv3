@@ -597,37 +597,37 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>	
 		<tr>
-			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "Tan"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>b<b></td>
+            <td bgcolor="Tan" style='text-align:center;color:black;'><?php 
                     echo "".$serverd." MiB 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
+			<td bgcolor="Tan" style='text-align:center;color:black;'><?php 
                     echo "".$serverf."
                       " . $x['hapus']; 
                     ?></td>
 		<tr>
-			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>m<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
+			<td bgcolor="silver" style='text-align:center;color:black;'><b>m<b></td>
+            <td bgcolor="silver" style='text-align:center;color:black;'><?php 
                     echo "".$mamad." MiB 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
+			<td bgcolor="silver" style='text-align:center;color:black;'><?php 
                     echo "".$mamaf."
                       " . $x['hapus']; 
                     ?></td>
 		<tr>
-			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>k<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
+			<td bgcolor="silver" style='text-align:center;color:black;'><b>k<b></td>
+            <td bgcolor="silver" style='text-align:center;color:black;'><?php 
                     echo "".$kakad." MiB 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
+			<td bgcolor="silver" style='text-align:center;color:black;'><?php 
                     echo "".$kakaf."
                       " . $x['hapus']; 
                     ?></td>			
 		<tr>
-            <td bgcolor="orange"style='text-align:center;'><i class="fa fa-laptop"> PC </i><b><td bgcolor="orange"style='text-align:center;'> <?php 
+            <td bgcolor="plum"style='text-align:center;'><h3><b> BIN </i><b><td bgcolor="plum"style='text-align:center;'><h3><b> <?php 
                     echo "".$warnet."
                       " . $x['hapus']; 
                     ?><b></td>	
@@ -651,8 +651,8 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ?></td>
 				
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Total-Bytes</td>
-            <td bgcolor="pink" style='text-align:center;color:black;'><?php 
+			<td bgcolor="plum" style='text-align:center;color:black;'><h3><b>Total-Bytes</td>
+            <td bgcolor="plum" style='text-align:center;color:black;'><h3><b><?php 
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
@@ -691,7 +691,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 
 </table>
 	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="Wheat" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> <?php 
+           <td bgcolor="plum" style='text-align:center;color:black;'><i class="fa fa-wifi"></i><b> <?php 
                     echo "".$wifi."
                       " . $x['hapus']; 
                     ?> | <?php 
