@@ -102,7 +102,7 @@ $rsj = $API->comm("/interface/print");  //
 		$realtotalx = formatBytes(($rt), 2);
 		
   $a = $API->comm("/queue/simple/print");
-  $aa= $a[22];
+  $aa= $a[24];
   $aaa= $aa['total-bytes'];
   $wifi = formatBytes(($aaa), 2);
   $wifie = $aa['total-rate'];
@@ -276,6 +276,22 @@ $rsj = $API->comm("/interface/print");  //
   $serverd = floor(($serverb)/1048576);
   $servere = $servera['total-rate'];
   $serverf = formatBites($servere);
+  
+  $mama = $API->comm("/queue/simple/print");
+  $mamaa= $mama[22];
+  $mamab= $mamaa['total-bytes'];
+  $mamac = formatBytes(($mamab), 2);
+  $mamad = floor(($mamab)/1048576);
+  $mamae = $mamaa['total-rate'];
+  $mamaf = formatBites($mamae);
+  
+  $kaka = $API->comm("/queue/simple/print");
+  $kakaa= $kaka[23];
+  $kakab= $kakaa['total-bytes'];
+  $kakac = formatBytes(($kakab), 2);
+  $kakad = floor(($kakab)/1048576);
+  $kakae = $kakaa['total-rate'];
+  $kakaf = formatBites($kakae);
   
   $kkj = $API->comm("/interface/monitor-traffic", array("interface" => "0INDIHOME", "once" => "",));
 		$ruru = $kkj[0]['tx-bits-per-second']; //
@@ -655,13 +671,13 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 
 </table>
 	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="Wheat" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> non pc : <?php 
+           <td bgcolor="Wheat" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> <?php 
                     echo "".$wifi."
                       " . $x['hapus']; 
-                    ?><i class="fa fa-wifi"></i> non pc : <?php 
+                    ?> | <?php 
                     echo "".$wifif."
                       " . $x['hapus'];  
-                    ?><br/>Pemakai hotspot : <?php
+                    ?> <i class="fa fa-wifi"></i></br>pemakai hotspot : <?php
 				if ($serveractive == "") {
 				} else {
 					echo $serveractive . " ";
@@ -675,7 +691,13 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 				} else {
 					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
 				}
-				?></td>
+				?></br><i class="fa  fa-android"></i> mama <?php 
+                    echo "".$mamad." MiB | ".$mamaf."
+                      " . $x['hapus']; 
+                    ?></br><i class="fa  fa-android"></i> kaka <?php 
+                    echo "".$kakad." MiB | ".$kakaf."
+                      " . $x['hapus']; 
+                    ?></td>
 	</table>
    
 
