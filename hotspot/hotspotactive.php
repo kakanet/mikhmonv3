@@ -607,6 +607,26 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>
 		<tr>
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>m<b></td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
+                    echo "".$mamad." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
+                    echo "".$mamaf."
+                      " . $x['hapus']; 
+                    ?></td>
+		<tr>
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "orange"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>k<b></td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
+                    echo "".$kakad." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
+                    echo "".$kakaf."
+                      " . $x['hapus']; 
+                    ?></td>			
+		<tr>
             <td bgcolor="orange"style='text-align:center;'><i class="fa fa-laptop"> PC </i><b><td bgcolor="orange"style='text-align:center;'> <?php 
                     echo "".$warnet."
                       " . $x['hapus']; 
@@ -691,13 +711,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 				} else {
 					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
 				}
-				?></br><i class="fa  fa-android"></i> mama <?php 
-                    echo "".$mamad." MiB | ".$mamaf."
-                      " . $x['hapus']; 
-                    ?></br><i class="fa  fa-android"></i> kaka <?php 
-                    echo "".$kakad." MiB | ".$kakaf."
-                      " . $x['hapus']; 
-                    ?></td>
+				?></td>
 	</table>
    
 
