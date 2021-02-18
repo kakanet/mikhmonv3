@@ -117,11 +117,11 @@ $rsj = $API->comm("/interface/print");  //
   
   $warnet = formatBytes(($rt)-($aaa), 2);
   
-  $pc1 = $API->comm("/queue/simple/print");
+   $pc1 = $API->comm("/queue/simple/print");
   $pc1a= $pc1[1];
   $pc1b= $pc1a['total-bytes'];
   $pc1c = formatBytes(($pc1b), 2);
-  $pc1d = floor(($pc1b)/1048576);
+  $pc1d = round((($pc1b)/1048576), 2);
   $pc1e = $pc1a['total-rate'];
   $pc1f = formatBites($pc1e);
 
@@ -129,7 +129,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc3a= $pc3[2];
   $pc3b= $pc3a['total-bytes'];
   $pc3c = formatBytes(($pc3b), 2);
-  $pc3d = floor(($pc3b)/1048576);
+  $pc3d = round((($pc3b)/1048576), 2);
   $pc3e = $pc3a['total-rate'];
   $pc3f = formatBites($pc3e);
   
@@ -137,7 +137,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc5a= $pc5[3];
   $pc5b= $pc5a['total-bytes'];
   $pc5c = formatBytes(($pc5b), 2);
-  $pc5d = floor(($pc5b)/1048576);
+  $pc5d = round((($pc5b)/1048576), 2);
   $pc5e = $pc5a['total-rate'];
   $pc5f = formatBites($pc5e);
   
@@ -145,7 +145,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc10a= $pc10[4];
   $pc10b= $pc10a['total-bytes'];
   $pc10c = formatBytes(($pc10b), 2);
-  $pc10d = floor(($pc10b)/1048576);
+  $pc10d = round((($pc10b)/1048576), 2);
   $pc10e = $pc10a['total-rate'];
   $pc10f = formatBites($pc10e);
   
@@ -153,7 +153,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc11a= $pc11[5];
   $pc11b= $pc11a['total-bytes'];
   $pc11c = formatBytes(($pc11b), 2);
-  $pc11d = floor(($pc11b)/1048576);
+  $pc11d = round((($pc11b)/1048576), 2);
   $pc11e = $pc11a['total-rate'];
   $pc11f = formatBites($pc11e);
   
@@ -161,7 +161,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc12a= $pc12[6];
   $pc12b= $pc12a['total-bytes'];
   $pc12c = formatBytes(($pc12b), 2);
-  $pc12d = floor(($pc12b)/1048576);
+  $pc12d = round((($pc12b)/1048576), 2);
   $pc12e = $pc12a['total-rate'];
   $pc12f = formatBites($pc12e);
   
@@ -169,7 +169,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc13a= $pc13[7];
   $pc13b= $pc13a['total-bytes'];
   $pc13c = formatBytes(($pc13b), 2);
-  $pc13d = floor(($pc13b)/1048576);
+  $pc13d = round((($pc13b)/1048576), 2);
   $pc13e = $pc13a['total-rate'];
   $pc13f = formatBites($pc13e);
   
@@ -177,7 +177,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc14a= $pc14[8];
   $pc14b= $pc14a['total-bytes'];
   $pc14c = formatBytes(($pc14b), 2);
-  $pc14d = floor(($pc14b)/1048576);
+  $pc14d = round((($pc14b)/1048576), 2);
   $pc14e = $pc14a['total-rate'];
   $pc14f = formatBites($pc14e);
   
@@ -185,7 +185,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc15a= $pc15[9];
   $pc15b= $pc15a['total-bytes'];
   $pc15c = formatBytes(($pc15b), 2);
-  $pc15d = floor(($pc15b)/1048576);
+  $pc15d = round((($pc15b)/1048576), 2);
   $pc15e = $pc15a['total-rate'];
   $pc15f = formatBites($pc15e);
   
@@ -193,7 +193,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc16a= $pc16[10];
   $pc16b= $pc16a['total-bytes'];
   $pc16c = formatBytes(($pc16b), 2);
-  $pc16d = floor(($pc16b)/1048576);
+  $pc16d = round((($pc16b)/1048576), 2);
   $pc16e = $pc16a['total-rate'];
   $pc16f = formatBites($pc16e);
   
@@ -201,7 +201,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc17a= $pc17[11];
   $pc17b= $pc17a['total-bytes'];
   $pc17c = formatBytes(($pc17b), 2);
-  $pc17d = floor(($pc17b)/1048576);
+  $pc17d = round((($pc17b)/1048576), 2);
   $pc17e = $pc17a['total-rate'];
   $pc17f = formatBites($pc17e);
   
@@ -209,7 +209,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc18a= $pc18[12];
   $pc18b= $pc18a['total-bytes'];
   $pc18c = formatBytes(($pc18b), 2);
-  $pc18d = floor(($pc18b)/1048576);
+  $pc18d = round((($pc18b)/1048576), 2);
   $pc18e = $pc18a['total-rate'];
   $pc18f = formatBites($pc18e);
   
@@ -217,7 +217,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc19a= $pc19[13];
   $pc19b= $pc19a['total-bytes'];
   $pc19c = formatBytes(($pc19b), 2);
-  $pc19d = floor(($pc19b)/1048576);
+  $pc19d = round((($pc19b)/1048576), 2);
   $pc19e = $pc19a['total-rate'];
   $pc19f = formatBites($pc19e);
   
@@ -225,7 +225,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc20a= $pc20[14];
   $pc20b= $pc20a['total-bytes'];
   $pc20c = formatBytes(($pc20b), 2);
-  $pc20d = floor(($pc20b)/1048576);
+  $pc20d = round((($pc20b)/1048576), 2);
   $pc20e = $pc20a['total-rate'];
   $pc20f = formatBites($pc20e);
   
@@ -233,7 +233,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc21a= $pc21[15];
   $pc21b= $pc21a['total-bytes'];
   $pc21c = formatBytes(($pc21b), 2);
-  $pc21d = floor(($pc21b)/1048576);
+  $pc21d = round((($pc21b)/1048576), 2);
   $pc21e = $pc21a['total-rate'];
   $pc21f = formatBites($pc21e);
   
@@ -241,7 +241,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc22a= $pc22[16];
   $pc22b= $pc22a['total-bytes'];
   $pc22c = formatBytes(($pc22b), 2);
-  $pc22d = floor(($pc22b)/1048576);
+  $pc22d = round((($pc22b)/1048576), 2);
   $pc22e = $pc22a['total-rate'];
   $pc22f = formatBites($pc22e);
   
@@ -249,7 +249,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc23a= $pc23[17];
   $pc23b= $pc23a['total-bytes'];
   $pc23c = formatBytes(($pc23b), 2);
-  $pc23d = floor(($pc23b)/1048576);
+  $pc23d = round((($pc23b)/1048576), 2);
   $pc23e = $pc23a['total-rate'];
   $pc23f = formatBites($pc23e);
   
@@ -257,7 +257,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc24a= $pc24[18];
   $pc24b= $pc24a['total-bytes'];
   $pc24c = formatBytes(($pc24b), 2);
-  $pc24d = floor(($pc24b)/1048576);
+  $pc24d = round((($pc24b)/1048576), 2);
   $pc24e = $pc24a['total-rate'];
   $pc24f = formatBites($pc24e);
   
@@ -265,7 +265,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc25a= $pc25[19];
   $pc25b= $pc25a['total-bytes'];
   $pc25c = formatBytes(($pc25b), 2);
-  $pc25d = floor(($pc25b)/1048576);
+  $pc25d = round((($pc25b)/1048576), 2);
   $pc25e = $pc25a['total-rate'];
   $pc25f = formatBites($pc25e);
   
@@ -273,7 +273,7 @@ $rsj = $API->comm("/interface/print");  //
   $servera= $server[20];
   $serverb= $servera['total-bytes'];
   $serverc = formatBytes(($serverb), 2);
-  $serverd = floor(($serverb)/1048576);
+  $serverd = round((($serverb)/1048576), 2);
   $servere = $servera['total-rate'];
   $serverf = formatBites($servere);
   
