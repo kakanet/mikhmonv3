@@ -106,7 +106,7 @@ $rsj = $API->comm("/interface/print");  //
   $wific= $wifib['total-bytes'];
   $wifid = formatBytes(($wific), 2); // jumlah wifi
   $wifie = $wifib['total-rate'];
-  $wifif = formatBites($wifie); // kecepatan wifi
+  $wifif = formatBites(($wifie), 2); // kecepatan wifi
   
   $b = $API->comm("/queue/simple/print");
   $bb= $b[0];
@@ -115,7 +115,7 @@ $rsj = $API->comm("/interface/print");  //
   $semuamb = floor(($bbb)/1048576);
   $semuambb = floor(($bbb)/1048576*1.048576);
   $binrate = $bb['total-rate'];
-  $binrates = formatBites($binrate); //kecepatan bin
+  $binrates = formatBites(($binrate), 2); //kecepatan bin
   
   $wififff = formatBytes(($rt)-($bbb), 2); //jumlah wifi cara hitung : indihome - binding (cadangan)
   
@@ -127,8 +127,8 @@ $rsj = $API->comm("/interface/print");  //
 		$rere = $kkj[0]['rx-bits-per-second']; //download indihome
 		$mayuk = formatBites(($rere), 2);	
 	
-	$tsm = formatBites(($binrate)+($wifie)); //total speed mikrotik	
-	$tsi = formatBites(($rere)+($ruru));	//total speed indihome
+	$tsm = formatBites((($binrate)+($wifie)), 2); //total speed mikrotik	
+	$tsi = formatBites((($rere)+($ruru)), 2);	//total speed indihome
 	$tss = formatBites(($binrate+wifie-$rere-$ruru)); //total selisih tsm dan tsi
 	
 	$tbm = formatBytes(($bbb)+($wific), 2); //total byte mikrotik
