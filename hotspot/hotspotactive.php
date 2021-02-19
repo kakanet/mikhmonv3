@@ -64,7 +64,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 	<div class="card">
 		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-laptop"></i> BINDING-WARNET-SELONGAN </h3>
+    		<h3><i class="fa fa-laptop"></i> BINDING-WARNET</h3>
         </div>
 		
 		<?php
@@ -103,10 +103,10 @@ $rsj = $API->comm("/interface/print");  //
 		
   $a = $API->comm("/queue/simple/print");
   $aa= $a[24];
-  $aaa= $aa['total-rate'];
+  $aaa= $aa['total-bytes'];
   $wifi = formatBites(($aaa), 2); //kecepatan wifi = berdasarkan urutan #
-  $wifie = $aa['total-byte'];
-  $wifig = formatBytes($wifie);
+  $wifie = $aa['total-rate'];
+  $wifif = formatBytes($wifie);
   
   $b = $API->comm("/queue/simple/print");
   $bb= $b[0];
@@ -402,63 +402,42 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
     <title>Mengenal Tabel HTML</title>
 </head>
 <body>
-    <table height=100px width=250px border=1 cellpadding=0 cellspacing=5 align="left">
+    <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes<b></td>
 			<td bgcolor="orange" style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
-        </tr>
+        <tr>
             <td bgcolor=<?php if($pc1d > "0"){ echo $bgcolor = "white"; }elseif($pc1d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>1<b></td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "$pc1d" ?> MiB</td>
+                    echo "".$pc1d." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
 			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "$pc1f" ?></td>
+                    echo "".$pc1f."
+                      " . $x['hapus']; 
+                    ?></td>
         </tr>
 			<td bgcolor=<?php if($pc3d > "0"){ echo $bgcolor = "white"; }elseif($pc3d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>3<b></td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "$pc3d" ?> MiB</td>
+                    echo "".$pc3d." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
 			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "$pc3f" ?></td>
+                    echo "".$pc3f."
+                      " . $x['hapus']; 
+                    ?></td>
 		 </tr>
 			<td bgcolor=<?php if($pc5d > "0"){ echo $bgcolor = "white"; }elseif($pc5d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>5<b></td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "$pc5d" ?> Mib</td>
+                    echo "".$pc5d." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
 			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "$pc5f" ?></td>
-		</tr><tr><tr><tr>
-			<td bgcolor="tan" style='text-align:center;color:black;'><b>billing<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "$serverd" ?> MiB</td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "$serverf" ?></td>
-		</tr>
-			<td bgcolor="tan" style='text-align:center;color:black;'><b>mama<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "$mamad" ?> MiB</td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "$mamaf" ?></td>
-		</tr>
-			<td bgcolor="tan" style='text-align:center;color:black;'><b>kaka<b></td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "$kakad" ?> MiB</td>
-			<td bgcolor="orange" style='text-align:center;color:black;'><?php 
-                    echo "$kakaf" ?></td>			
-		</tr>
-            <td bgcolor="plum"style='text-align:center;'><b><h2>BIN<b></td>
-			<td bgcolor="plum"style='text-align:center;'><b><h2><?php 
-                    echo "$semua" ?><b></td>
-			<td bgcolor="plum" style='text-align:center;color:black;'><b><h2><?php 
-                    echo "$binrates" ?></td>	
-					
-		
-    </table>
-	<table height=200px width=250px border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes<b></td>
-			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
-        </tr>
+                    echo "".$pc5f."
+                      " . $x['hapus']; 
+                    ?></td>		
         <tr>
             <td bgcolor=<?php if($pc10d > "0"){ echo $bgcolor = "white"; }elseif($pc10d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
             <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
@@ -549,14 +528,6 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     echo "".$pc18f."
                       " . $x['hapus']; 
                     ?></td>			
-		
-    </table>
-	<table height=200px width=250px border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes</td>
-			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
-        </tr>
         <tr>
             <td bgcolor=<?php if($pc19d > "0"){ echo $bgcolor = "white"; }elseif($pc19d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
@@ -627,15 +598,51 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     echo "".$pc25f."
                       " . $x['hapus']; 
                     ?></td>	
-		
-					
-		
-    </table>
-	
+		<tr>
+			<td bgcolor=<?php if($serverd > "0"){ echo $bgcolor = "Tan"; }elseif($serverd < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>billing<b></td>
+            <td bgcolor="Tan" style='text-align:center;color:black;'><?php 
+                    echo "".$serverd." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="Tan" style='text-align:center;color:black;'><?php 
+                    echo "".$serverf."
+                      " . $x['hapus']; 
+                    ?></td>
+		<tr>
+			<td bgcolor="silver" style='text-align:center;color:black;'><b>mama<b></td>
+            <td bgcolor="silver" style='text-align:center;color:black;'><?php 
+                    echo "".$mamad." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="silver" style='text-align:center;color:black;'><?php 
+                    echo "".$mamaf."
+                      " . $x['hapus']; 
+                    ?></td>
+		<tr>
+			<td bgcolor="silver" style='text-align:center;color:black;'><b>kaka<b></td>
+            <td bgcolor="silver" style='text-align:center;color:black;'><?php 
+                    echo "".$kakad." MiB 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="silver" style='text-align:center;color:black;'><?php 
+                    echo "".$kakaf."
+                      " . $x['hapus']; 
+                    ?></td>			
+		<tr>
+            <td bgcolor="plum"style='text-align:center;'><h3><b> BIN </i><b><td bgcolor="plum"style='text-align:center;'><h3><b> <?php 
+                    echo "".$semua."
+                      " . $x['hapus']; 
+                    ?><b></td>	
+			<td bgcolor="plum" style='text-align:center;color:black;'><h3><b><?php 
+                    echo "".$binrates."
+                      " . $x['hapus']; 
+                    ?></td>		
+
+	</table>				
 </body>
 </html> 
 </table>
-	<table height=200px width=380px border=1 cellpadding=0 cellspacing=5 align="right">	
+	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
 		</tr>
 			<td bgcolor="pink" style='text-align:center;color:black;'>Rate-Down-Up</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php 
@@ -651,8 +658,8 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ?></td>
 				
 		</tr>
-			<td bgcolor="plum" style='text-align:center;color:black;'><h2>Total-Bytes</td>
-            <td bgcolor="plum" style='text-align:center;color:black;'><h2><?php 
+			<td bgcolor="plum" style='text-align:center;color:black;'><h3><b>Total-Bytes</td>
+            <td bgcolor="plum" style='text-align:center;color:black;'><h3><b><?php 
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
@@ -681,22 +688,21 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 </body>
 </html> 
 
-
 <div class="row">
 <div id="reloadHotspotActive">
 <div class="col-12">
 	<div class="card">
 		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-rss"></i> HOTSPOT-WARNET-SELONGAN </h3>
-        </div> 
-		
+    		<h3><i class="fa fa-rss"></i> HOTSPOT-WARNET</h3>
+        </div>
+
 </table>
 	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="plum" style='text-align:center;color:black;'><h2><i class="fa fa-wifi"></i><b> <?php 
+           <td bgcolor="plum" style='text-align:center;color:black;'><i class="fa fa-wifi"></i><b> <?php 
                     echo "".$wifif."
                       " . $x['hapus']; 
                     ?> | <?php 
-                    echo "".$wifi." 
+                    echo "".$wifi."
                       " . $x['hapus'];  
                     ?> <i class="fa fa-wifi"></i></br>pemakai hotspot : <?php
 				if ($serveractive == "") {
@@ -714,7 +720,10 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 				}
 				?></td>
 	</table>
-		
+   
+
+</div>
+</div>
          <div class="card-body overflow">
 <table height=100px width=100% id="tFilter" class="table table-bordered table-hover text-nowrap">
   <thead>
@@ -746,7 +755,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$byteso = formatBytes($hotspotactive['bytes-out'], 2);
 	$bytesz = $hotspotactive['bytes-out'];
 	$rrr = (($bytesy)+($bytesz));
-	$byte = round((($rrr)/1048576), 2);
+    $byte = round((($rrr)/1048576), 2);
 	$address = $hotspotactive['address'];	
 	$loginby = $hotspotactive['login-by'];
 	$comment = $hotspotactive['comment'];
