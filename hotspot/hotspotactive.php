@@ -724,7 +724,6 @@ $rsj = $API->comm("/interface/print");  //
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
-			<td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Selisih<b></td>
         </tr>
         <tr>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
@@ -733,10 +732,6 @@ $rsj = $API->comm("/interface/print");  //
                     ?></td>
             <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$tsi." 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$tss."
                       " . $x['hapus']; 
                     ?></td></tr><tr>	
 		 </table> 
