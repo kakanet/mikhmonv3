@@ -103,10 +103,10 @@ $rsj = $API->comm("/interface/print");  //
 		
   $a = $API->comm("/queue/simple/print");
   $aa= $a[24];
-  $aaa= $aa['total-bytes'];
+  $aaa= $aa['total-rate'];
   $wifi = formatBites(($aaa), 2); //kecepatan wifi = berdasarkan urutan #
-  $wifie = $aa['total-rate'];
-  $wifif = formatBytes($wifie);
+  $wifie = $aa['total-byte'];
+  $wifig = formatBytes($wifie);
   
   $b = $API->comm("/queue/simple/print");
   $bb= $b[0];
