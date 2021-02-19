@@ -64,7 +64,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 	<div class="card">
 		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-laptop"></i> BINDING-WARNET</h3>
+    		<h3><i class="fa fa-laptop"></i> BINDING</h3>
         </div>
 		
 		<?php
@@ -101,12 +101,12 @@ $rsj = $API->comm("/interface/print");  //
 		$realtotal = floor(($rt)/1048576);
 		$realtotalx = formatBytes(($rt), 2);
 		
-  $a = $API->comm("/queue/simple/print");
-  $aa= $a[24];
-  $aaa= $aa['total-rate'];
-  $wifi = formatBites(($aaa), 2); //kecepatan wifi = berdasarkan urutan #
-  $wifie = $aa['total-byte'];
-  $wifig = formatBytes($wifie);
+  $wifi = $API->comm("/queue/simple/print");
+  $wifib= $wifi[24];
+  $wific= $wifib['total-bytes'];
+  $wifid = formatBytes(($wific), 2); // jumlah wifi
+  $wifie = $wifib['total-rate'];
+  $wifif = formatBites($wifie); // kecepatan wifi
   
   $b = $API->comm("/queue/simple/print");
   $bb= $b[0];
@@ -115,9 +115,31 @@ $rsj = $API->comm("/interface/print");  //
   $semuamb = floor(($bbb)/1048576);
   $semuambb = floor(($bbb)/1048576*1.048576);
   $binrate = $bb['total-rate'];
-  $binrates = formatBites($binrate);
+  $binrates = formatBites($binrate); //kecepatan bin
   
-  $wifif = formatBytes(($rt)-($bbb), 2); //pemakaian wifi cara hitung : indihome - binding
+  $wififff = formatBytes(($rt)-($bbb), 2); //jumlah wifi cara hitung : indihome - binding (cadangan)
+  
+  
+  
+  $kkj = $API->comm("/interface/monitor-traffic", array("interface" => "0INDIHOME", "once" => "",));
+		$ruru = $kkj[0]['tx-bits-per-second']; //upload indihome
+		$muyak = formatBites(($ruru), 2);
+		$rere = $kkj[0]['rx-bits-per-second']; //download indihome
+		$mayuk = formatBites(($rere), 2);	
+	
+	$tsm = formatBites(($binrate)+($wifie)); //total speed mikrotik	
+	$tsi = formatBites(($rere)+($ruru));	//total speed indihome
+	$tss = formatBites(($binrate+wifie-$rere-$ruru)); //total selisih tsm dan tsi
+	
+	$tbm = formatBytes(($bbb)+($wific), 2); //total byte mikrotik
+	$tbi = formatBytes(($raras)+($rara), 2); //total byte indihome
+	$tbs = formatBytes(($bbb+$wific-$raras-$rara), 2); //total byte selisih
+		
+		
+		
+  $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
+		$ipr = $ipc['7']; //
+		$ip = $ipr['address']; //
   
   $pc1 = $API->comm("/queue/simple/print");
   $pc1a= $pc1[1];
@@ -295,15 +317,6 @@ $rsj = $API->comm("/interface/print");  //
   $kakae = $kakaa['total-rate'];
   $kakaf = formatBites($kakae);
   
-  $kkj = $API->comm("/interface/monitor-traffic", array("interface" => "0INDIHOME", "once" => "",));
-		$ruru = $kkj[0]['tx-bits-per-second']; //
-		$muyak = formatBites(($ruru), 2);
-		$rere = $kkj[0]['rx-bits-per-second']; //
-		$mayuk = formatBites(($rere), 2);	
-		
-$ipc = $API->comm("/ip/address/print");  //cek ip terbaik
-		$ipr = $ipc['7']; //
-		$ip = $ipr['address']; //
 		
 
 		
@@ -629,7 +642,7 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                       " . $x['hapus']; 
                     ?></td>			
 		<tr>
-            <td bgcolor="plum"style='text-align:center;'><h3><b> BIN </i><b><td bgcolor="plum"style='text-align:center;'><h3><b> <?php 
+            <td bgcolor="plum"style='text-align:center;'><h3><b> BIND </i><b><td bgcolor="plum"style='text-align:center;'><h3><b> <?php 
                     echo "".$semua."
                       " . $x['hapus']; 
                     ?><b></td>	
@@ -644,28 +657,28 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 </table>
 	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Rate-Down-Up</td>
+			<td bgcolor="pink" style='text-align:center;color:black;'>Rate-Down-Up-I</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php 
                     echo " ".$mayuk." - ".$muyak."
                       " . $x['hapus']; 
                     ?></td>			
 					
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>Total-Down-Up</td>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>Total-Down-Up-I</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$downloadall." - ".$uploadall."
                       " . $x['hapus']; 
                     ?></td>
 				
 		</tr>
-			<td bgcolor="plum" style='text-align:center;color:black;'><h3><b>Total-Bytes</td>
-            <td bgcolor="plum" style='text-align:center;color:black;'><h3><b><?php 
+			<td bgcolor="plum" style='text-align:center;color:black;'><b>Total-Bytes-I</td>
+            <td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
 		
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>IP</td>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>IP-I</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo "".$ip."
                       " . $x['hapus']; 
@@ -685,6 +698,48 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     $_SESSION[$session.'sdate'] = $clock['date'];
                     ?></td>
     </table>
+	
+	 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Indihome<b></td>
+			<td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Selisih<b></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbm."  
+                      " . $x['hapus']; 
+                    ?></td>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbi." 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbs."
+                      " . $x['hapus']; 
+                    ?></td>
+		 </table>
+
+			 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
+			<td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Selisih<b></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tsm."  
+                      " . $x['hapus']; 
+                    ?></td>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tsi." 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tss."
+                      " . $x['hapus']; 
+                    ?></td>
+		 </table> 
 </body>
 </html> 
 
@@ -693,16 +748,16 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
 <div class="col-12">
 	<div class="card">
 		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-rss"></i> HOTSPOT-WARNET</h3>
+    		<h3><i class="fa fa-rss"></i> HOTSPOT & NON BINDING</h3>
         </div>
 
 </table>
 	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="plum" style='text-align:center;color:black;'><i class="fa fa-wifi"></i><b> <?php 
-                    echo "".$wifif."
+           <td bgcolor="plum" style='text-align:center;color:black;'><b><i class="fa fa-wifi"></i> <?php 
+                    echo "".$wifid."
                       " . $x['hapus']; 
                     ?> | <?php 
-                    echo "".$wifi."
+                    echo "".$wifif."
                       " . $x['hapus'];  
                     ?> <i class="fa fa-wifi"></i></br>pemakai hotspot : <?php
 				if ($serveractive == "") {
