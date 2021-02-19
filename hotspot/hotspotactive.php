@@ -649,9 +649,9 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor="plum" style='text-align:center;color:black;'><h3><b><?php 
                     echo "".$binrates."
                       " . $x['hapus']; 
-                    ?></td>		
+                    ?></td></tr><tr><tr>	
 
-	</table>				
+	</table>			
 </body>
 </html> 
 </table>
@@ -696,7 +696,7 @@ $rsj = $API->comm("/interface/print");  //
                     echo ucfirst($clock['date']) . " " . $clock['time'] . "<br>
                     ".$_uptime." : " . formatDTM($resource['uptime']);
                     $_SESSION[$session.'sdate'] = $clock['date'];
-                    ?></td>
+                    ?></td></tr><tr><tr>	
     </table>
 	
 	 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
@@ -738,7 +738,7 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
                     echo "".$tss."
                       " . $x['hapus']; 
-                    ?></td>
+                    ?></td></tr><tr>	
 		 </table> 
 </body>
 </html> 
