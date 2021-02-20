@@ -599,15 +599,30 @@ $rsj = $API->comm("/interface/print");  //
                     echo "".$pc25f."
                       " . $x['hapus']; 
                     ?></td>			
-		<tr>
-            <td bgcolor="plum"style='text-align:center;'><h3><b> BIND </i><b><td bgcolor="plum"style='text-align:center;'><h3><b> <?php 
-                    echo "".$semua."
-                      " . $x['hapus']; 
-                    ?><b></td>	
-			<td bgcolor="plum" style='text-align:center;color:black;'><h3><b><?php 
-                    echo "".$binrates."
-                      " . $x['hapus']; 
-                    ?></td></tr><tr><tr>	
+		</tr>
+			<td bgcolor=<?php if($servere > "0"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>billing<b></td>
+            <td bgcolor=<?php if($serverb > "1073741824"){ echo $bgcolor = "yellow"; }elseif($serverb < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$serverc" ?> </td>
+			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "yellow"; }elseif($servere < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$serverf" ?></td>
+		</tr>
+			<td bgcolor="tan" style='text-align:center;color:black;'><b>asus<b></td>
+            <td bgcolor=<?php if($mamab > "1073741824"){ echo $bgcolor = "yellow"; }elseif($mamab < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$mamac" ?> </td>
+			<td bgcolor=<?php if($mamae > "1048576"){ echo $bgcolor = "yellow"; }elseif($mamae < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$mamaf" ?></td>
+		</tr>
+			<td bgcolor="tan" style='text-align:center;color:black;'><b>xiaomi<b></td>
+            <td bgcolor=<?php if($kakab > "1073741824"){ echo $bgcolor = "yellow"; }elseif($kakab < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$kakac" ?> </td>
+			<td bgcolor=<?php if($kakae > "1048576"){ echo $bgcolor = "yellow"; }elseif($kakae < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$kakaf" ?></td>			
+		</tr>
+            <td bgcolor="plum"style='text-align:center;'><b>BIND<b></td>
+			<td bgcolor="plum"style='text-align:center;'><b><?php 
+                    echo "$semua" ?><b></td>
+			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
+                    echo "$binrates" ?></td></tr><tr><tr>	
 
 	</table>			
 </body>
@@ -657,42 +672,7 @@ $rsj = $API->comm("/interface/print");  //
                     ?></td></tr><tr><tr>	
     </table>
 	
-	 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
-            <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Indihome<b></td>
-			<td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Selisih<b></td>
-        </tr>
-        <tr>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$tbm."  
-                      " . $x['hapus']; 
-                    ?></td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$tbi." 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$tbs."
-                      " . $x['hapus']; 
-                    ?></td>
-		 </table>
-
-			 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
-            <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
-        </tr>
-        <tr>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$tsm."  
-                      " . $x['hapus']; 
-                    ?></td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$tsi." 
-                      " . $x['hapus']; 
-                    ?></td></tr><tr>	
-		 </table> 
+	  
 </body>
 </html> 
 
@@ -787,7 +767,42 @@ for ($i = 0; $i < $TotalReg; $i++) {
   </tbody>
 </table>
 </div>
+<table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Indihome<b></td>
+			<td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Selisih<b></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbm."  
+                      " . $x['hapus']; 
+                    ?></td>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbi." 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbs."
+                      " . $x['hapus']; 
+                    ?></td>
+		 </table>
 
+			 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tsm."  
+                      " . $x['hapus']; 
+                    ?></td>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tsi." 
+                      " . $x['hapus']; 
+                    ?></td></tr><tr>	
+		 </table>
 
 </div>
 </div>
