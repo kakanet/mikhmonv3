@@ -422,27 +422,27 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor="orange" style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         </tr>
-            <td bgcolor=<?php if($pc1d > "0"){ echo $bgcolor = "white"; }elseif($pc1d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>1<b></td>
+            <td bgcolor=<?php if($pc1e > "0"){ echo $bgcolor = "white"; }elseif($pc1e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>1<b></td>
             <td bgcolor=<?php if($pc1b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc1b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "$pc1d" ?> MiB</td>
+                    echo "$pc1c" ?> </td>
 			<td bgcolor=<?php if($pc1e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc1e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc1f" ?></td>
         </tr>
-			<td bgcolor=<?php if($pc3d > "0"){ echo $bgcolor = "white"; }elseif($pc3d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>3<b></td>
+			<td bgcolor=<?php if($pc3e > "0"){ echo $bgcolor = "white"; }elseif($pc3e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>3<b></td>
             <td bgcolor=<?php if($pc3b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc3b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "$pc3d" ?> MiB</td>
+                    echo "$pc3c" ?> </td>
 			<td bgcolor=<?php if($pc3e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc3e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc3f" ?></td>
 		 </tr>
-			<td bgcolor=<?php if($pc5d > "0"){ echo $bgcolor = "white"; }elseif($pc5d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>5<b></td>
+			<td bgcolor=<?php if($pc5e > "0"){ echo $bgcolor = "white"; }elseif($pc5e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>5<b></td>
             <td bgcolor=<?php if($pc5b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc5b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "$pc5d" ?> Mib</td>
+                    echo "$pc5c" ?> </td>
 			<td bgcolor=<?php if($pc5e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc5e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc5f" ?></td>		
         <tr>
-            <td bgcolor=<?php if($pc10d > "0"){ echo $bgcolor = "white"; }elseif($pc10d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
+            <td bgcolor=<?php if($pc10e > "0"){ echo $bgcolor = "white"; }elseif($pc10e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
             <td bgcolor=<?php if($pc10b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc10b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc10d." MiB 
+                    echo "".$pc10c."  
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc10e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc10e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -450,9 +450,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor=<?php if($pc11d > "0"){ echo $bgcolor = "white"; }elseif($pc11d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>11<b></td>
+			<td bgcolor=<?php if($pc11e > "0"){ echo $bgcolor = "white"; }elseif($pc11e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>11<b></td>
             <td bgcolor=<?php if($pc11b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc11b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc11d." MiB 
+                    echo "".$pc11c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc11e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc11e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -460,9 +460,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor=<?php if($pc12d > "0"){ echo $bgcolor = "white"; }elseif($pc12d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>12</td>
+			<td bgcolor=<?php if($pc12e > "0"){ echo $bgcolor = "white"; }elseif($pc12e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>12</td>
             <td bgcolor=<?php if($pc12b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc12b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc12d." MiB 
+                    echo "".$pc12c."  
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc12e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc12e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -470,9 +470,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc13d > "0"){ echo $bgcolor = "white"; }elseif($pc13d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>13</td>
+			<td bgcolor=<?php if($pc13e > "0"){ echo $bgcolor = "white"; }elseif($pc13e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>13</td>
             <td bgcolor=<?php if($pc13b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc13b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc13d." MiB 
+                    echo "".$pc13c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc13e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc13e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -480,9 +480,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc14d > "0"){ echo $bgcolor = "white"; }elseif($pc14d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>14</td>
+			<td bgcolor=<?php if($pc14e > "0"){ echo $bgcolor = "white"; }elseif($pc14e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>14</td>
             <td bgcolor=<?php if($pc14b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc14b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc14d." MiB 
+                    echo "".$pc14c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc14e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc14e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -490,9 +490,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc15d > "0"){ echo $bgcolor = "white"; }elseif($pc15d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>15</td>
+			<td bgcolor=<?php if($pc15e > "0"){ echo $bgcolor = "white"; }elseif($pc15e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>15</td>
             <td bgcolor=<?php if($pc15b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc15b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc15d." MiB 
+                    echo "".$pc15c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc15e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc15e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -500,9 +500,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc16d > "0"){ echo $bgcolor = "white"; }elseif($pc16d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>16</td>
+			<td bgcolor=<?php if($pc16e > "0"){ echo $bgcolor = "white"; }elseif($pc16e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>16</td>
             <td bgcolor=<?php if($pc16b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc16b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc16d." MiB 
+                    echo "".$pc16c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc16e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc16e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -510,9 +510,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc17d > "0"){ echo $bgcolor = "white"; }elseif($pc17d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>17</td>
+			<td bgcolor=<?php if($pc17e > "0"){ echo $bgcolor = "white"; }elseif($pc17e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>17</td>
             <td bgcolor=<?php if($pc17b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc17b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc17d." MiB 
+                    echo "".$pc17c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc17e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc17e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -520,9 +520,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc18d > "0"){ echo $bgcolor = "white"; }elseif($pc18d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>18</td>
+			<td bgcolor=<?php if($pc18e > "0"){ echo $bgcolor = "white"; }elseif($pc18e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>18</td>
             <td bgcolor=<?php if($pc18b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc18b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc18d." MiB 
+                    echo "".$pc18c."  
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc18e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc18e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -530,9 +530,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>			
         <tr>
-            <td bgcolor=<?php if($pc19d > "0"){ echo $bgcolor = "white"; }elseif($pc19d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
+            <td bgcolor=<?php if($pc19e > "0"){ echo $bgcolor = "white"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
            <td bgcolor=<?php if($pc19b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc19b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc19d." MiB 
+                    echo "".$pc19c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc19e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc19e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -540,9 +540,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor=<?php if($pc20d > "0"){ echo $bgcolor = "white"; }elseif($pc20d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>20</td>
+			<td bgcolor=<?php if($pc20e > "0"){ echo $bgcolor = "white"; }elseif($pc20e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>20</td>
             <td bgcolor=<?php if($pc20b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc20b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc20d." MiB 
+                    echo "".$pc20c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc20e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc20e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -550,9 +550,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor=<?php if($pc21d > "0"){ echo $bgcolor = "white"; }elseif($pc21d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>21</td>
+			<td bgcolor=<?php if($pc21e > "0"){ echo $bgcolor = "white"; }elseif($pc21e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>21</td>
             <td bgcolor=<?php if($pc21b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc21b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc21d." MiB 
+                    echo "".$pc21c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc21e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc21e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -560,9 +560,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc22d > "0"){ echo $bgcolor = "white"; }elseif($pc22d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>22</td>
+			<td bgcolor=<?php if($pc22e > "0"){ echo $bgcolor = "white"; }elseif($pc22e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>22</td>
             <td bgcolor=<?php if($pc22b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc22b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc22d." MiB 
+                    echo "".$pc22c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc22e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc22e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -570,9 +570,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc23d > "0"){ echo $bgcolor = "white"; }elseif($pc23d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>23</td>
+			<td bgcolor=<?php if($pc23e > "0"){ echo $bgcolor = "white"; }elseif($pc23e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>23</td>
             <td bgcolor=<?php if($pc23b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc23b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc23d." MiB 
+                    echo "".$pc23c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc23e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc23e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -580,9 +580,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc24d > "0"){ echo $bgcolor = "white"; }elseif($pc24d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>24</td>
+			<td bgcolor=<?php if($pc24e > "0"){ echo $bgcolor = "white"; }elseif($pc24e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>24</td>
             <td bgcolor=<?php if($pc24b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc24b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc24d." MiB 
+                    echo "".$pc24c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc24e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc24e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -590,9 +590,9 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc25d > "0"){ echo $bgcolor = "white"; }elseif($pc25d < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>25</td>
+			<td bgcolor=<?php if($pc25e > "0"){ echo $bgcolor = "white"; }elseif($pc25e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>25</td>
             <td bgcolor=<?php if($pc25b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc25b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
-                    echo "".$pc25d." MiB 
+                    echo "".$pc25c." 
                       " . $x['hapus']; 
                     ?></td>
 			<td bgcolor=<?php if($pc25e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc25e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
@@ -763,6 +763,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$byteso = formatBytes($hotspotactive['bytes-out'], 2);
 	$bytesz = $hotspotactive['bytes-out'];
 	$rrr = (($bytesy)+($bytesz));
+	$bytesooo = formatBytes (($rrr), 2);
     $byte = round((($rrr)/1048576), 2);
 	$address = $hotspotactive['address'];	
 	$loginby = $hotspotactive['login-by'];
@@ -772,7 +773,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	echo "<td style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
 	echo "<td style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
 	echo "<td style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
-	echo "<td style='text-align:right;'>" . $byte . " MiB</td>";
+	echo "<td style='text-align:right;'>" . $bytesooo . " </td>";
 	echo "<td style='text-align:center;'>" . $idletime . " </td>";
 	echo "<td style='text-align:center;'>" . $uptime . "</td>";
 	echo "<td style='text-align:right;'>" . $byteso . "</td>";
