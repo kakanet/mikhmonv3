@@ -63,23 +63,11 @@ if (!isset($_SESSION["mikhmon"])) {
 <div id="reloadHotspotActive">
 <div class="col-12">
 	<div class="card">
-		<div class="card-header">
-    		<h3><i class="fa fa-wifi"></i> <?= $_hotspot_active ?> <?php
-				if ($serveractive == "") {
-				} else {
-					echo $serveractive . " ";
-				}
-				if ($counthotspotactive < 2) {
-					echo "$counthotspotactive item";
-				} elseif ($counthotspotactive > 1) {
-					echo "$counthotspotactive items";
-				};
-				if ($serveractive == "") {
-				} else {
-					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
-				}
-				?>			</h3>
-        </div><?php
+		<div class="card-header"style='text-align:center;'>
+    		<h3><i class="fa fa-laptop"></i> BINDING</h3>
+        </div>
+		
+		<?php
 /*
  *  Copyright (C) 2018 Laksamadi Guko.
  *
@@ -113,12 +101,12 @@ $rsj = $API->comm("/interface/print");  //
 		$realtotal = floor(($rt)/1048576);
 		$realtotalx = formatBytes(($rt), 2);
 		
-  $a = $API->comm("/queue/simple/print");
-  $aa= $a[22];
-  $aaa= $aa['total-bytes'];
-  $wifi = formatBytes(($aaa), 2);
-  $wifie = $aa['total-rate'];
-  $wifif = formatBites($wifie);
+  $wifi = $API->comm("/queue/simple/print");
+  $wifib= $wifi[24];
+  $wific= $wifib['total-bytes'];
+  $wifid = formatBytes(($wific), 2); // jumlah wifi
+  $wifie = $wifib['total-rate'];
+  $wifif = formatBites(($wifie), 2); // kecepatan wifi
   
   $b = $API->comm("/queue/simple/print");
   $bb= $b[0];
@@ -126,14 +114,38 @@ $rsj = $API->comm("/interface/print");  //
   $semua = formatBytes(($bbb), 2);
   $semuamb = floor(($bbb)/1048576);
   $semuambb = floor(($bbb)/1048576*1.048576);
+  $binrate = $bb['total-rate'];
+  $binrates = formatBites(($binrate), 2); //kecepatan bin
   
-  $warnet = formatBytes(($rt)-($aaa), 2);
+  $wififff = formatBytes(($rt)-($bbb), 2); //jumlah wifi cara hitung : indihome - binding (cadangan)
+  
+  
+  
+  $kkj = $API->comm("/interface/monitor-traffic", array("interface" => "0INDIHOME", "once" => "",));
+		$ruru = $kkj[0]['tx-bits-per-second']; //upload indihome
+		$muyak = formatBites(($ruru), 2);
+		$rere = $kkj[0]['rx-bits-per-second']; //download indihome
+		$mayuk = formatBites(($rere), 2);	
+	
+	$tsm = formatBites((($binrate)+($wifie)), 2); //total speed mikrotik	
+	$tsi = formatBites((($rere)+($ruru)), 2);	//total speed indihome
+	$tss = formatBites(($binrate+wifie-$rere-$ruru)); //total selisih tsm dan tsi
+	
+	$tbm = formatBytes(($bbb)+($wific), 2); //total byte mikrotik
+	$tbi = formatBytes(($raras)+($rara), 2); //total byte indihome
+	$tbs = formatBytes(($bbb+$wific-$raras-$rara), 2); //total byte selisih
+		
+		
+		
+  $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
+		$ipr = $ipc['7']; //
+		$ip = $ipr['address']; //
   
   $pc1 = $API->comm("/queue/simple/print");
   $pc1a= $pc1[1];
   $pc1b= $pc1a['total-bytes'];
   $pc1c = formatBytes(($pc1b), 2);
-  $pc1d = floor(($pc1b)/1048576);
+  $pc1d = round((($pc1b)/1048576), 2);
   $pc1e = $pc1a['total-rate'];
   $pc1f = formatBites($pc1e);
 
@@ -141,7 +153,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc3a= $pc3[2];
   $pc3b= $pc3a['total-bytes'];
   $pc3c = formatBytes(($pc3b), 2);
-  $pc3d = floor(($pc3b)/1048576);
+  $pc3d = round((($pc3b)/1048576), 2);
   $pc3e = $pc3a['total-rate'];
   $pc3f = formatBites($pc3e);
   
@@ -149,7 +161,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc5a= $pc5[3];
   $pc5b= $pc5a['total-bytes'];
   $pc5c = formatBytes(($pc5b), 2);
-  $pc5d = floor(($pc5b)/1048576);
+  $pc5d = round((($pc5b)/1048576), 2);
   $pc5e = $pc5a['total-rate'];
   $pc5f = formatBites($pc5e);
   
@@ -157,7 +169,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc10a= $pc10[4];
   $pc10b= $pc10a['total-bytes'];
   $pc10c = formatBytes(($pc10b), 2);
-  $pc10d = floor(($pc10b)/1048576);
+  $pc10d = round((($pc10b)/1048576), 2);
   $pc10e = $pc10a['total-rate'];
   $pc10f = formatBites($pc10e);
   
@@ -165,7 +177,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc11a= $pc11[5];
   $pc11b= $pc11a['total-bytes'];
   $pc11c = formatBytes(($pc11b), 2);
-  $pc11d = floor(($pc11b)/1048576);
+  $pc11d = round((($pc11b)/1048576), 2);
   $pc11e = $pc11a['total-rate'];
   $pc11f = formatBites($pc11e);
   
@@ -173,7 +185,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc12a= $pc12[6];
   $pc12b= $pc12a['total-bytes'];
   $pc12c = formatBytes(($pc12b), 2);
-  $pc12d = floor(($pc12b)/1048576);
+  $pc12d = round((($pc12b)/1048576), 2);
   $pc12e = $pc12a['total-rate'];
   $pc12f = formatBites($pc12e);
   
@@ -181,7 +193,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc13a= $pc13[7];
   $pc13b= $pc13a['total-bytes'];
   $pc13c = formatBytes(($pc13b), 2);
-  $pc13d = floor(($pc13b)/1048576);
+  $pc13d = round((($pc13b)/1048576), 2);
   $pc13e = $pc13a['total-rate'];
   $pc13f = formatBites($pc13e);
   
@@ -189,7 +201,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc14a= $pc14[8];
   $pc14b= $pc14a['total-bytes'];
   $pc14c = formatBytes(($pc14b), 2);
-  $pc14d = floor(($pc14b)/1048576);
+  $pc14d = round((($pc14b)/1048576), 2);
   $pc14e = $pc14a['total-rate'];
   $pc14f = formatBites($pc14e);
   
@@ -197,7 +209,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc15a= $pc15[9];
   $pc15b= $pc15a['total-bytes'];
   $pc15c = formatBytes(($pc15b), 2);
-  $pc15d = floor(($pc15b)/1048576);
+  $pc15d = round((($pc15b)/1048576), 2);
   $pc15e = $pc15a['total-rate'];
   $pc15f = formatBites($pc15e);
   
@@ -205,7 +217,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc16a= $pc16[10];
   $pc16b= $pc16a['total-bytes'];
   $pc16c = formatBytes(($pc16b), 2);
-  $pc16d = floor(($pc16b)/1048576);
+  $pc16d = round((($pc16b)/1048576), 2);
   $pc16e = $pc16a['total-rate'];
   $pc16f = formatBites($pc16e);
   
@@ -213,7 +225,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc17a= $pc17[11];
   $pc17b= $pc17a['total-bytes'];
   $pc17c = formatBytes(($pc17b), 2);
-  $pc17d = floor(($pc17b)/1048576);
+  $pc17d = round((($pc17b)/1048576), 2);
   $pc17e = $pc17a['total-rate'];
   $pc17f = formatBites($pc17e);
   
@@ -221,7 +233,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc18a= $pc18[12];
   $pc18b= $pc18a['total-bytes'];
   $pc18c = formatBytes(($pc18b), 2);
-  $pc18d = floor(($pc18b)/1048576);
+  $pc18d = round((($pc18b)/1048576), 2);
   $pc18e = $pc18a['total-rate'];
   $pc18f = formatBites($pc18e);
   
@@ -229,7 +241,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc19a= $pc19[13];
   $pc19b= $pc19a['total-bytes'];
   $pc19c = formatBytes(($pc19b), 2);
-  $pc19d = floor(($pc19b)/1048576);
+  $pc19d = round((($pc19b)/1048576), 2);
   $pc19e = $pc19a['total-rate'];
   $pc19f = formatBites($pc19e);
   
@@ -237,7 +249,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc20a= $pc20[14];
   $pc20b= $pc20a['total-bytes'];
   $pc20c = formatBytes(($pc20b), 2);
-  $pc20d = floor(($pc20b)/1048576);
+  $pc20d = round((($pc20b)/1048576), 2);
   $pc20e = $pc20a['total-rate'];
   $pc20f = formatBites($pc20e);
   
@@ -245,7 +257,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc21a= $pc21[15];
   $pc21b= $pc21a['total-bytes'];
   $pc21c = formatBytes(($pc21b), 2);
-  $pc21d = floor(($pc21b)/1048576);
+  $pc21d = round((($pc21b)/1048576), 2);
   $pc21e = $pc21a['total-rate'];
   $pc21f = formatBites($pc21e);
   
@@ -253,7 +265,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc22a= $pc22[16];
   $pc22b= $pc22a['total-bytes'];
   $pc22c = formatBytes(($pc22b), 2);
-  $pc22d = floor(($pc22b)/1048576);
+  $pc22d = round((($pc22b)/1048576), 2);
   $pc22e = $pc22a['total-rate'];
   $pc22f = formatBites($pc22e);
   
@@ -261,7 +273,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc23a= $pc23[17];
   $pc23b= $pc23a['total-bytes'];
   $pc23c = formatBytes(($pc23b), 2);
-  $pc23d = floor(($pc23b)/1048576);
+  $pc23d = round((($pc23b)/1048576), 2);
   $pc23e = $pc23a['total-rate'];
   $pc23f = formatBites($pc23e);
   
@@ -269,7 +281,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc24a= $pc24[18];
   $pc24b= $pc24a['total-bytes'];
   $pc24c = formatBytes(($pc24b), 2);
-  $pc24d = floor(($pc24b)/1048576);
+  $pc24d = round((($pc24b)/1048576), 2);
   $pc24e = $pc24a['total-rate'];
   $pc24f = formatBites($pc24e);
   
@@ -277,7 +289,7 @@ $rsj = $API->comm("/interface/print");  //
   $pc25a= $pc25[19];
   $pc25b= $pc25a['total-bytes'];
   $pc25c = formatBytes(($pc25b), 2);
-  $pc25d = floor(($pc25b)/1048576);
+  $pc25d = round((($pc25b)/1048576), 2);
   $pc25e = $pc25a['total-rate'];
   $pc25f = formatBites($pc25e);
   
@@ -285,20 +297,53 @@ $rsj = $API->comm("/interface/print");  //
   $servera= $server[20];
   $serverb= $servera['total-bytes'];
   $serverc = formatBytes(($serverb), 2);
-  $serverd = floor(($serverb)/1048576);
+  $serverd = round((($serverb)/1048576), 2);
   $servere = $servera['total-rate'];
   $serverf = formatBites($servere);
   
-  $kkj = $API->comm("/interface/monitor-traffic", array("interface" => "0INDIHOME", "once" => "",));
-		$ruru = $kkj[0]['tx-bits-per-second']; //
-		$muyak = formatBites(($ruru), 2);
-		$rere = $kkj[0]['rx-bits-per-second']; //
-		$mayuk = formatBites(($rere), 2);	
-		
-$ipc = $API->comm("/ip/address/print");  //cek ip terbaik
-		$ipr = $ipc['7']; //
-		$ip = $ipr['address']; //
-		
+  $mama = $API->comm("/queue/simple/print");
+  $mamaa= $mama[22];
+  $mamab= $mamaa['total-bytes'];
+  $mamac = formatBytes(($mamab), 2);
+  $mamad = round((($mamab)/1048576), 2);
+  $mamae = $mamaa['total-rate'];
+  $mamaf = formatBites($mamae);
+  
+  $kaka = $API->comm("/queue/simple/print");
+  $kakaa= $kaka[23];
+  $kakab= $kakaa['total-bytes'];
+  $kakac = formatBytes(($kakab), 2);
+  $kakad = round((($kakab)/1048576), 2);
+  $kakae = $kakaa['total-rate'];
+  $kakaf = formatBites($kakae);
+  
+  $j1 = number_format($pc1e/$pc1e)*100/100;
+  $j3 = number_format($pc3e/$pc3e)*100/100;
+  $j5 = number_format($pc5e/$pc5e)*100/100;
+  
+  $j10 = number_format($pc10e/$pc10e)*100/100;
+  $j11 = number_format($pc11e/$pc11e)*100/100;
+  $j12 = number_format($pc12e/$pc12e)*100/100;
+  $j13 = number_format($pc13e/$pc13e)*100/100;
+  $j14 = number_format($pc14e/$pc14e)*100/100;
+  $j15 = number_format($pc15e/$pc15e)*100/100;
+  $j16 = number_format($pc16e/$pc16e)*100/100;
+  $j17 = number_format($pc17e/$pc17e)*100/100;
+  $j18 = number_format($pc18e/$pc18e)*100/100;
+  $j19 = number_format($pc19e/$pc19e)*100/100;
+  $j20 = number_format($pc20e/$pc20e)*100/100;
+  $j21 = number_format($pc21e/$pc21e)*100/100;
+  $j22 = number_format($pc22e/$pc22e)*100/100;
+  $j23 = number_format($pc23e/$pc23e)*100/100;
+  $j24 = number_format($pc24e/$pc24e)*100/100;
+  $j25 = number_format($pc25e/$pc25e)*100/100;
+  $jterisi = number_format($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
+  $jkosong = number_format(19-$jterisi);
+  
+  $bawahterisi = number_format(($j1)+($j3)+($j5));
+  $bawahkosong = number_format(3-($bawahterisi));
+  $atasterisi = number_format (($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25));
+  $ataskosong = number_format (16-($atasterisi));
 
 		
 // get MikroTik system clock
@@ -396,266 +441,270 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
     <title>Mengenal Tabel HTML</title>
 </head>
 <body>
-    <table height=100px width=250px border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
+    <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes<b></td>
 			<td bgcolor="orange" style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
-        <tr>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><b>1<b></td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc1d." MiB 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc1f."
-                      " . $x['hapus']; 
-                    ?></td>
         </tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>3<b></td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc3d." MiB 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc3f."
-                      " . $x['hapus']; 
-                    ?></td>
+            <td bgcolor=<?php if($pc1e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc1e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>1<b></td>
+            <td bgcolor=<?php if($pc1e < "1"){ echo $bgcolor = "white"; }elseif($pc1b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc1b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$pc1c" ?> </td>
+			<td bgcolor=<?php if($pc1e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc1e < "1"){ echo $bgcolor = "white"; }elseif($pc1e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$pc1f" ?></td>
+        </tr>
+			<td bgcolor=<?php if($pc3e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc3e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>3<b></td>
+            <td bgcolor=<?php if($pc3e < "1"){ echo $bgcolor = "white"; }elseif($pc3b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc3b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$pc3c" ?> </td>
+			<td bgcolor=<?php if($pc3e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc3e < "1"){ echo $bgcolor = "white"; }elseif($pc3e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$pc3f" ?></td>
 		 </tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>5<b></td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc5d." MiB 
+			<td bgcolor=<?php if($pc5e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc5e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>5<b></td>
+            <td bgcolor=<?php if($pc5e < "1"){ echo $bgcolor = "white"; }elseif($pc5b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc5b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$pc5c" ?> </td>
+			<td bgcolor=<?php if($pc5e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc5e < "1"){ echo $bgcolor = "white"; }elseif($pc5e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$pc5f" ?></td>		
+         <tr>
+            <td bgcolor=<?php if($pc10e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc10e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>10<b></td>
+            <td bgcolor=<?php if($pc10e < "1"){ echo $bgcolor = "white"; }elseif($pc10b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc10b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc10c."  
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc5f."
-                      " . $x['hapus']; 
-                    ?></td>
-		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>b<b></td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$serverd." MiB 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$serverf."
-                      " . $x['hapus']; 
-                    ?></td>
-		<tr><tr><tr>
-            <td bgcolor="orange"style='text-align:center;'><i class="fa fa-laptop"> PC </i><b><td bgcolor="orange"style='text-align:center;'> <?php 
-                    echo "".$warnet."
-                      " . $x['hapus']; 
-                    ?><b></td>			
-    </table>
-	<table height=200px width=250px border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes<b></td>
-			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
-        </tr>
-        <tr>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><b>10<b></td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc10d." MiB 
-                      " . $x['hapus']; 
-                    ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc10e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc10e < "1"){ echo $bgcolor = "white"; }elseif($pc10e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc10f."
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>11<b></td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc11d." MiB 
+			<td bgcolor=<?php if($pc11e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc11e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>11<b></td>
+            <td bgcolor=<?php if($pc11e < "1"){ echo $bgcolor = "white"; }elseif($pc11b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc11b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc11c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc11e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc11e < "1"){ echo $bgcolor = "white"; }elseif($pc11e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc11f."
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>12</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc12d." MiB 
+			<td bgcolor=<?php if($pc12e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc12e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>12</td>
+            <td bgcolor=<?php if($pc12e < "1"){ echo $bgcolor = "white"; }elseif($pc12b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc12b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc12c."  
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc12e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc12e < "1"){ echo $bgcolor = "white"; }elseif($pc12e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc12f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>13</td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc13d." MiB 
+			<td bgcolor=<?php if($pc13e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc13e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>13</td>
+            <td bgcolor=<?php if($pc13e < "1"){ echo $bgcolor = "white"; }elseif($pc13b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc13b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc13c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc13e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc13e < "1"){ echo $bgcolor = "white"; }elseif($pc13e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc13f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>14</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc14d." MiB 
+			<td bgcolor=<?php if($pc14e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc14e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>14</td>
+            <td bgcolor=<?php if($pc14e < "1"){ echo $bgcolor = "white"; }elseif($pc14b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc14b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc14c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc14e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc14e < "1"){ echo $bgcolor = "white"; }elseif($pc14e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc14f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>15</td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc15d." MiB 
+			<td bgcolor=<?php if($pc15e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc15e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>15</td>
+            <td bgcolor=<?php if($pc15e < "1"){ echo $bgcolor = "white"; }elseif($pc15b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc15b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc15c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc15e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc15e < "1"){ echo $bgcolor = "white"; }elseif($pc15e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc15f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>16</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc16d." MiB 
+			<td bgcolor=<?php if($pc16e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc16e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>16</td>
+            <td bgcolor=<?php if($pc16e < "1"){ echo $bgcolor = "white"; }elseif($pc16b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc16b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc16c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc16e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc16e < "1"){ echo $bgcolor = "white"; }elseif($pc16e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc16f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>17</td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc17d." MiB 
+			<td bgcolor=<?php if($pc17e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc17e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>17</td>
+            <td bgcolor=<?php if($pc17e < "1"){ echo $bgcolor = "white"; }elseif($pc17b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc17b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc17c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc17e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc17e < "1"){ echo $bgcolor = "white"; }elseif($pc17e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc17f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>18</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc18d." MiB 
+			<td bgcolor=<?php if($pc18e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc18e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>18</td>
+            <td bgcolor=<?php if($pc18e < "1"){ echo $bgcolor = "white"; }elseif($pc18b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc18b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc18c."  
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc18e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc18e < "1"){ echo $bgcolor = "white"; }elseif($pc18e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc18f."
                       " . $x['hapus']; 
                     ?></td>			
-		
-    </table>
-	<table height=200px width=250px border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
-            <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
-            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes</td>
-			<td bgcolor="orange"style='text-align:center;'><b>Total-Rate<b></td>
-        </tr>
-        <tr>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><b>19</td>
-           <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc19d." MiB 
+            <td bgcolor=<?php if($pc19e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>19</td>
+           <td bgcolor=<?php if($pc19e < "1"){ echo $bgcolor = "white"; }elseif($pc19b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc19b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc19c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc19e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc19e < "1"){ echo $bgcolor = "white"; }elseif($pc19e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc19f."
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>20</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc20d." MiB 
+			<td bgcolor=<?php if($pc20e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc20e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>20</td>
+            <td bgcolor=<?php if($pc20e < "1"){ echo $bgcolor = "white"; }elseif($pc20b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc20b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc20c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc20e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc20e < "1"){ echo $bgcolor = "white"; }elseif($pc20e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc20f."
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>21</td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc21d." MiB 
+			<td bgcolor=<?php if($pc21e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc21e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>21</td>
+            <td bgcolor=<?php if($pc21e < "1"){ echo $bgcolor = "white"; }elseif($pc21b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc21b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc21c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc21e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc21e < "1"){ echo $bgcolor = "white"; }elseif($pc21e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc21f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>22</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc22d." MiB 
+			<td bgcolor=<?php if($pc22e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc22e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>22</td>
+            <td bgcolor=<?php if($pc22e < "1"){ echo $bgcolor = "white"; }elseif($pc22b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc22b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc22c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc22e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc22e < "1"){ echo $bgcolor = "white"; }elseif($pc22e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc22f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>23</td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc23d." MiB 
+			<td bgcolor=<?php if($pc23e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc23e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>23</td>
+            <td bgcolor=<?php if($pc23e < "1"){ echo $bgcolor = "white"; }elseif($pc23b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc23b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc23c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc23e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc23e < "1"){ echo $bgcolor = "white"; }elseif($pc23e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc23f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><b>24</td>
-            <td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
-                    echo "".$pc24d." MiB 
+			<td bgcolor=<?php if($pc24e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc24e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>24</td>
+            <td bgcolor=<?php if($pc24e < "1"){ echo $bgcolor = "white"; }elseif($pc24b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc24b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc24c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="#04ff00" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc24e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc24e < "1"){ echo $bgcolor = "white"; }elseif($pc24e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc24f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><b>25</td>
-            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
-                    echo "".$pc25d." MiB 
+			<td bgcolor=<?php if($pc25e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc25e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>25</td>
+            <td bgcolor=<?php if($pc25e < "1"){ echo $bgcolor = "white"; }elseif($pc25b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc25b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+                    echo "".$pc25c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc25e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc25e < "1"){ echo $bgcolor = "white"; }elseif($pc25e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc25f."
                       " . $x['hapus']; 
+                    ?></td>			
+		</tr>
+			<td bgcolor=<?php if($servere > "0"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>billing<b></td>
+            <td bgcolor=<?php if($servere < "1"){ echo $bgcolor = "tan"; }elseif($serverb > "1073741824"){ echo $bgcolor = "tan"; }elseif($serverb < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$serverc" ?> </td>
+			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "tan"; }elseif($servere < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$serverf" ?></td>
+		</tr>
+			<td bgcolor=<?php if($mamae > "0"){ echo $bgcolor = "tan"; }elseif($mamae < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>asus<b></td>
+            <td bgcolor=<?php if($mamab > "1073741824"){ echo $bgcolor = "tan"; }elseif($mamae < "1"){ echo $bgcolor = "tan"; }elseif($mamab < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$mamac" ?> </td>
+			<td bgcolor=<?php if($mamae > "1048576"){ echo $bgcolor = "tan"; }elseif($mamaee < "1"){ echo $bgcolor = "tan"; }elseif($mamae < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$mamaf" ?></td>
+		</tr>
+			<td bgcolor=<?php if($kakae > "0"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>xiaomi<b></td>
+            <td bgcolor=<?php if($kakab > "1073741824"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }elseif($kakab < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$kakac" ?> </td>
+			<td bgcolor=<?php if($kakae > "1048576"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }elseif($kakae < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$kakaf" ?></td>			
+		</tr>
+            <td bgcolor="plum"style='text-align:center;'><b>BIND<b></td>
+			<td bgcolor="plum"style='text-align:center;'><b><?php 
+                    echo "$semua" ?><b></td>
+			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
+                    echo "$binrates" ?></td>
+		</tr><tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>bawah kosong : <?php 
+                    echo "".$bawahkosong." | ter-isi : ".$bawahterisi."
+                      " . $x['hapus']; 
                     ?></td>	
-		
-    </table>
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>atas kosong : <?php 
+                    echo "".$ataskosong." | ter-isi : ".$atasterisi."
+                      " . $x['hapus']; 
+                    ?></td>
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>kosong <?php 
+                    echo "".$jkosong." | terisi : ".$jterisi." 
+                      " . $x['hapus']; 
+                    ?></td>				
+				
+				
+
+	</table>			
 </body>
 </html> 
 </table>
-	<table height=200px width=300px border=1 cellpadding=0 cellspacing=5 align="left">	
+	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
+		
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Rate-Down-Up</td>
-            <td bgcolor="pink" style='text-align:center;color:black;'><?php 
+			<td bgcolor="orange" style='text-align:center;color:black;'><b>Indihome</td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><b>Status</td>
+		</tr>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'><b>IP-I</td>
+            <td bgcolor="Cyan" style='text-align:center;color:black;'><b><?php 
+                    echo "".$ip."
+                      " . $x['hapus']; 
+                    ?></td>
+		
+		</tr>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>Rate-Down-Up-I</td>
+            <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$mayuk." - ".$muyak."
                       " . $x['hapus']; 
                     ?></td>			
 					
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>Total-Down-Up</td>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>Total-Down-Up-I</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$downloadall." - ".$uploadall."
                       " . $x['hapus']; 
                     ?></td>
 				
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Total-Bytes</td>
-            <td bgcolor="pink" style='text-align:center;color:black;'><?php 
+			<td bgcolor="plum" style='text-align:center;color:black;'><b>Total-Bytes-I</td>
+            <td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
-		
-		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>IP</td>
-            <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
-                    echo "".$ip."
-                      " . $x['hapus']; 
-                    ?></td>	
-        </tr>
+			
+        </tr><tr><tr><tr>
 			<td bgcolor="pink" style='text-align:center;color:black;'>Resource</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php
                     echo $_cpu_load." : " . $resource['cpu-load'] . "%<br/>
@@ -663,45 +712,69 @@ $ipc = $API->comm("/ip/address/print");  //cek ip terbaik
                     ".$_free_hdd." : " . formatBytes($resource['free-hdd-space'], 2)
                     ?></td>
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>Clock</td>
-            <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
+			<td bgcolor="pink" style='text-align:center;color:black;'>Clock</td>
+            <td bgcolor="pink" style='text-align:center;color:black;'><?php 
                     echo ucfirst($clock['date']) . " " . $clock['time'] . "<br>
                     ".$_uptime." : " . formatDTM($resource['uptime']);
                     $_SESSION[$session.'sdate'] = $clock['date'];
-                    ?></td>
+                    ?></td></tr><tr><tr>	
     </table>
+	
+	  
 </body>
 </html> 
 
+<div class="row">
+<div id="reloadHotspotActive">
+<div class="col-12">
+	<div class="card">
+		<div class="card-header"style='text-align:center;'>
+    		<h3><i class="fa fa-rss"></i> HOTSPOT & NON BINDING</h3>
+        </div>
+
 </table>
-	<table height=20px width=1130px border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="white" style='text-align:center;color:black;'><i class="fa fa-wifi"></i> WIFI <?php 
-                    echo "".$wifi."
+	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+           <td bgcolor="plum" style='text-align:center;color:black;'><b><i class="fa fa-wifi"></i> <?php 
+                    echo "".$wifid."
                       " . $x['hapus']; 
-                    ?><i class="fa fa-wifi"></i> WIFI <?php 
+                    ?> | <?php 
                     echo "".$wifif."
                       " . $x['hapus'];  
-                    ?></td>
+                    ?> <i class="fa fa-wifi"></i></br>pemakai hotspot : <?php
+				if ($serveractive == "") {
+				} else {
+					echo $serveractive . " ";
+				}
+				if ($counthotspotactive < 2) {
+					echo "$counthotspotactive user";
+				} elseif ($counthotspotactive > 1) {
+					echo "$counthotspotactive users";
+				};
+				if ($serveractive == "") {
+				} else {
+					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
+				}
+				?></td>
 	</table>
    
 
 </div>
 </div>
          <div class="card-body overflow">
-<table id="tFilter" class="table table-bordered table-hover text-nowrap">
+<table height=100px width=100% id="tFilter" class="table table-bordered table-hover text-nowrap">
   <thead>
   <tr>
-    <th></th>
-    <th>Server</th>
-    <th>User</th>
-    <th class="text-right">Total</th>
-    <th class="text-right">Address</th>
-    <th class="text-right">Uptime</th>
-    <th class="text-right">Down</th>
-    <th class="text-right">Up</th>
-    <th class="text-right">Idle Time</th>
-    <th>Login By</th>
-    <th><?= $_comment ?></th>
+    <th bgcolor="orange" class="text-center"></th>
+    <th bgcolor="orange" class="text-center">Server</th>
+    <th bgcolor="orange" class="text-center">User</th>
+    <th bgcolor="orange" class="text-center">Total</th>
+    <th bgcolor="orange" class="text-center">Idle Time</th>
+    <th bgcolor="orange" class="text-center">Uptime</th>
+    <th bgcolor="orange" class="text-center">Down</th>
+    <th bgcolor="orange"class="text-center">Up</th>
+    <th bgcolor="orange"class="text-center">Address</th>
+    <th bgcolor="orange"class="text-center">Login By</th>
+    <th bgcolor="orange"class="text-center"><?= $_comment ?></th>
   </tr>
   </thead>
   <tbody>
@@ -718,30 +791,66 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$byteso = formatBytes($hotspotactive['bytes-out'], 2);
 	$bytesz = $hotspotactive['bytes-out'];
 	$rrr = (($bytesy)+($bytesz));
-    $byte = floor(($rrr)/1048576);
+	$bytesooo = formatBytes (($rrr), 2);
+    $byte = round((($rrr)/1048576), 2);
 	$address = $hotspotactive['address'];	
 	$loginby = $hotspotactive['login-by'];
 	$comment = $hotspotactive['comment'];
 	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";
 	echo "<tr>";
-	echo "<td style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
-	echo "<td><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
-	echo "<td><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
-	echo "<td style='text-align:right;'>" . $byte . " MiB</td>";
-	echo "<td style='text-align:right;'>" . $address . " </td>";
-	echo "<td style='text-align:right;'>" . $uptime . "</td>";
-	echo "<td style='text-align:right;'>" . $byteso . "</td>";
-	echo "<td style='text-align:right;'>" . $bytesi . "</td>";
-	echo "<td style='text-align:right;'>" . $idletime . "</td>";
-	echo "<td>" . $loginby . "</td>";
-	echo "<td>" . $comment . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $bytesooo . " </td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $idletime . " </td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $uptime . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $byteso . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $bytesi . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $address . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $loginby . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:left;'>" . $comment . "</td>";
 	echo "</tr>";
 }
 ?>
   </tbody>
 </table>
 </div>
+<table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Indihome<b></td>
+			<td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Selisih<b></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbm."  
+                      " . $x['hapus']; 
+                    ?></td>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbi." 
+                      " . $x['hapus']; 
+                    ?></td>
+			<td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tbs."
+                      " . $x['hapus']; 
+                    ?></td>
+		 </table>
 
+			 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+            <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
+            <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tsm."  
+                      " . $x['hapus']; 
+                    ?></td>
+            <td bgcolor="yellow" style='text-align:center;color:black;'><?php 
+                    echo "".$tsi." 
+                      " . $x['hapus']; 
+                    ?></td></tr><tr>	
+		 </table>
 
 </div>
 </div>
