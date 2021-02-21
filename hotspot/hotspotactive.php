@@ -317,7 +317,30 @@ $rsj = $API->comm("/interface/print");  //
   $kakae = $kakaa['total-rate'];
   $kakaf = formatBites($kakae);
   
-		
+  $j1 = ($pc1e/$pc1e);
+  $j3 = ($pc3e/$pc3e);
+  $j5 = ($pc5e/$pc5e);
+  $j10 = ($pc10e/$pc10e);
+  $j11 = ($pc11e/$pc11e);
+  $j12 = ($pc12e/$pc12e);
+  $j13 = ($pc13e/$pc13e);
+  $j14 = ($pc14e/$pc14e);
+  $j15 = ($pc15e/$pc15e);
+  $j16 = ($pc16e/$pc16e);
+  $j17 = ($pc17e/$pc17e);
+  $j18 = ($pc18e/$pc18e);
+  $j19 = ($pc19e/$pc19e);
+  $j20 = ($pc20e/$pc20e);
+  $j21 = ($pc21e/$pc21e);
+  $j22 = ($pc22e/$pc22e);
+  $j23 = ($pc23e/$pc23e);
+  $j24 = ($pc24e/$pc24e);
+  $j25 = ($pc25e/$pc25e);
+  $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
+  $jkosong = (19-$jterisi);		
+  
+  $bawahkosong =(3-(($j1)+($j3)+($j5)));
+  $ataskosong = (16-(($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25)));
 
 		
 // get MikroTik system clock
@@ -422,216 +445,242 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor="orange" style='text-align:center;'><b>Total-Rate<b></td>
         </tr>
         </tr>
-            <td bgcolor=<?php if($pc1e > "0"){ echo $bgcolor = "white"; }elseif($pc1e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>1<b></td>
-            <td bgcolor=<?php if($pc1b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc1b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+            <td bgcolor=<?php if($pc1e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc1e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>1<b></td>
+            <td bgcolor=<?php if($pc1e < "1"){ echo $bgcolor = "white"; }elseif($pc1b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc1b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc1c" ?> </td>
-			<td bgcolor=<?php if($pc1e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc1e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc1e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc1e < "1"){ echo $bgcolor = "white"; }elseif($pc1e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc1f" ?></td>
         </tr>
-			<td bgcolor=<?php if($pc3e > "0"){ echo $bgcolor = "white"; }elseif($pc3e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>3<b></td>
-            <td bgcolor=<?php if($pc3b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc3b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc3e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc3e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>3<b></td>
+            <td bgcolor=<?php if($pc3e < "1"){ echo $bgcolor = "white"; }elseif($pc3b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc3b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc3c" ?> </td>
-			<td bgcolor=<?php if($pc3e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc3e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc3e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc3e < "1"){ echo $bgcolor = "white"; }elseif($pc3e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc3f" ?></td>
 		 </tr>
-			<td bgcolor=<?php if($pc5e > "0"){ echo $bgcolor = "white"; }elseif($pc5e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>5<b></td>
-            <td bgcolor=<?php if($pc5b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc5b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc5e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc5e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>5<b></td>
+            <td bgcolor=<?php if($pc5e < "1"){ echo $bgcolor = "white"; }elseif($pc5b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc5b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc5c" ?> </td>
-			<td bgcolor=<?php if($pc5e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc5e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc5e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc5e < "1"){ echo $bgcolor = "white"; }elseif($pc5e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "$pc5f" ?></td>		
-        <tr>
-            <td bgcolor=<?php if($pc10e > "0"){ echo $bgcolor = "white"; }elseif($pc10e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>10<b></td>
-            <td bgcolor=<?php if($pc10b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc10b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+         <tr>
+            <td bgcolor=<?php if($pc10e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc10e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>10<b></td>
+            <td bgcolor=<?php if($pc10e < "1"){ echo $bgcolor = "white"; }elseif($pc10b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc10b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc10c."  
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc10e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc10e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc10e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc10e < "1"){ echo $bgcolor = "white"; }elseif($pc10e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc10f."
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor=<?php if($pc11e > "0"){ echo $bgcolor = "white"; }elseif($pc11e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>11<b></td>
-            <td bgcolor=<?php if($pc11b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc11b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc11e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc11e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>11<b></td>
+            <td bgcolor=<?php if($pc11e < "1"){ echo $bgcolor = "white"; }elseif($pc11b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc11b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc11c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc11e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc11e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc11e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc11e < "1"){ echo $bgcolor = "white"; }elseif($pc11e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc11f."
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor=<?php if($pc12e > "0"){ echo $bgcolor = "white"; }elseif($pc12e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>12</td>
-            <td bgcolor=<?php if($pc12b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc12b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc12e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc12e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>12</td>
+            <td bgcolor=<?php if($pc12e < "1"){ echo $bgcolor = "white"; }elseif($pc12b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc12b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc12c."  
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc12e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc12e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc12e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc12e < "1"){ echo $bgcolor = "white"; }elseif($pc12e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc12f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc13e > "0"){ echo $bgcolor = "white"; }elseif($pc13e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>13</td>
-            <td bgcolor=<?php if($pc13b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc13b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc13e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc13e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>13</td>
+            <td bgcolor=<?php if($pc13e < "1"){ echo $bgcolor = "white"; }elseif($pc13b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc13b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc13c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc13e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc13e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc13e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc13e < "1"){ echo $bgcolor = "white"; }elseif($pc13e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc13f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc14e > "0"){ echo $bgcolor = "white"; }elseif($pc14e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>14</td>
-            <td bgcolor=<?php if($pc14b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc14b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc14e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc14e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>14</td>
+            <td bgcolor=<?php if($pc14e < "1"){ echo $bgcolor = "white"; }elseif($pc14b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc14b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc14c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc14e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc14e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc14e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc14e < "1"){ echo $bgcolor = "white"; }elseif($pc14e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc14f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc15e > "0"){ echo $bgcolor = "white"; }elseif($pc15e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>15</td>
-            <td bgcolor=<?php if($pc15b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc15b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc15e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc15e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>15</td>
+            <td bgcolor=<?php if($pc15e < "1"){ echo $bgcolor = "white"; }elseif($pc15b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc15b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc15c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc15e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc15e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc15e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc15e < "1"){ echo $bgcolor = "white"; }elseif($pc15e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc15f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc16e > "0"){ echo $bgcolor = "white"; }elseif($pc16e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>16</td>
-            <td bgcolor=<?php if($pc16b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc16b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc16e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc16e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>16</td>
+            <td bgcolor=<?php if($pc16e < "1"){ echo $bgcolor = "white"; }elseif($pc16b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc16b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc16c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc16e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc16e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc16e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc16e < "1"){ echo $bgcolor = "white"; }elseif($pc16e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc16f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc17e > "0"){ echo $bgcolor = "white"; }elseif($pc17e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>17</td>
-            <td bgcolor=<?php if($pc17b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc17b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc17e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc17e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>17</td>
+            <td bgcolor=<?php if($pc17e < "1"){ echo $bgcolor = "white"; }elseif($pc17b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc17b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc17c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc17e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc17e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc17e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc17e < "1"){ echo $bgcolor = "white"; }elseif($pc17e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc17f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc18e > "0"){ echo $bgcolor = "white"; }elseif($pc18e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>18</td>
-            <td bgcolor=<?php if($pc18b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc18b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc18e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc18e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>18</td>
+            <td bgcolor=<?php if($pc18e < "1"){ echo $bgcolor = "white"; }elseif($pc18b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc18b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc18c."  
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc18e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc18e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc18e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc18e < "1"){ echo $bgcolor = "white"; }elseif($pc18e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc18f."
                       " . $x['hapus']; 
                     ?></td>			
         <tr>
-            <td bgcolor=<?php if($pc19e > "0"){ echo $bgcolor = "white"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>19</td>
-           <td bgcolor=<?php if($pc19b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc19b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+            <td bgcolor=<?php if($pc19e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>19</td>
+           <td bgcolor=<?php if($pc19e < "1"){ echo $bgcolor = "white"; }elseif($pc19b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc19b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc19c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc19e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc19e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc19e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc19e < "1"){ echo $bgcolor = "white"; }elseif($pc19e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc19f."
                       " . $x['hapus']; 
                     ?></td>
         </tr>
-			<td bgcolor=<?php if($pc20e > "0"){ echo $bgcolor = "white"; }elseif($pc20e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>20</td>
-            <td bgcolor=<?php if($pc20b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc20b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc20e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc20e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>20</td>
+            <td bgcolor=<?php if($pc20e < "1"){ echo $bgcolor = "white"; }elseif($pc20b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc20b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc20c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc20e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc20e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc20e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc20e < "1"){ echo $bgcolor = "white"; }elseif($pc20e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc20f."
                       " . $x['hapus']; 
                     ?></td>
 		 </tr>
-			<td bgcolor=<?php if($pc21e > "0"){ echo $bgcolor = "white"; }elseif($pc21e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>21</td>
-            <td bgcolor=<?php if($pc21b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc21b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc21e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc21e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>21</td>
+            <td bgcolor=<?php if($pc21e < "1"){ echo $bgcolor = "white"; }elseif($pc21b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc21b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc21c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc21e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc21e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc21e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc21e < "1"){ echo $bgcolor = "white"; }elseif($pc21e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc21f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc22e > "0"){ echo $bgcolor = "white"; }elseif($pc22e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>22</td>
-            <td bgcolor=<?php if($pc22b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc22b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc22e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc22e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>22</td>
+            <td bgcolor=<?php if($pc22e < "1"){ echo $bgcolor = "white"; }elseif($pc22b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc22b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc22c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc22e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc22e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc22e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc22e < "1"){ echo $bgcolor = "white"; }elseif($pc22e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc22f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc23e > "0"){ echo $bgcolor = "white"; }elseif($pc23e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>23</td>
-            <td bgcolor=<?php if($pc23b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc23b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc23e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc23e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>23</td>
+            <td bgcolor=<?php if($pc23e < "1"){ echo $bgcolor = "white"; }elseif($pc23b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc23b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc23c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc23e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc23e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc23e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc23e < "1"){ echo $bgcolor = "white"; }elseif($pc23e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc23f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc24e > "0"){ echo $bgcolor = "white"; }elseif($pc24e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>24</td>
-            <td bgcolor=<?php if($pc24b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc24b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc24e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc24e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>24</td>
+            <td bgcolor=<?php if($pc24e < "1"){ echo $bgcolor = "white"; }elseif($pc24b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc24b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc24c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc24e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc24e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc24e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc24e < "1"){ echo $bgcolor = "white"; }elseif($pc24e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc24f."
                       " . $x['hapus']; 
                     ?></td>
 		</tr>
-			<td bgcolor=<?php if($pc25e > "0"){ echo $bgcolor = "white"; }elseif($pc25e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>25</td>
-            <td bgcolor=<?php if($pc25b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc25b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc25e > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc25e < "1"){ echo $bgcolor = "white"; }?> style='text-align:center;color:black;'><b>25</td>
+            <td bgcolor=<?php if($pc25e < "1"){ echo $bgcolor = "white"; }elseif($pc25b > "1073741824"){ echo $bgcolor = "yellow"; }elseif($pc25b < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc25c." 
                       " . $x['hapus']; 
                     ?></td>
-			<td bgcolor=<?php if($pc25e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc25e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($pc25e > "1048576"){ echo $bgcolor = "yellow"; }elseif($pc25e < "1"){ echo $bgcolor = "white"; }elseif($pc25e < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
                     echo "".$pc25f."
                       " . $x['hapus']; 
                     ?></td>			
 		</tr>
 			<td bgcolor=<?php if($servere > "0"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>billing<b></td>
-            <td bgcolor=<?php if($serverb > "1073741824"){ echo $bgcolor = "yellow"; }elseif($serverb < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+            <td bgcolor=<?php if($servere < "1"){ echo $bgcolor = "white"; }elseif($serverb > "1073741824"){ echo $bgcolor = "tan"; }elseif($serverb < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$serverc" ?> </td>
-			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "yellow"; }elseif($servere < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "white"; }elseif($servere < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$serverf" ?></td>
 		</tr>
-			<td bgcolor="tan" style='text-align:center;color:black;'><b>asus<b></td>
-            <td bgcolor=<?php if($mamab > "1073741824"){ echo $bgcolor = "yellow"; }elseif($mamab < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($mamae > "0"){ echo $bgcolor = "tan"; }elseif($mamae < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>asus<b></td>
+            <td bgcolor=<?php if($mamab > "1073741824"){ echo $bgcolor = "tan"; }elseif($mamae < "1"){ echo $bgcolor = "tan"; }elseif($mamab < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$mamac" ?> </td>
-			<td bgcolor=<?php if($mamae > "1048576"){ echo $bgcolor = "yellow"; }elseif($mamae < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($mamae > "1048576"){ echo $bgcolor = "tan"; }elseif($mamaee < "1"){ echo $bgcolor = "tan"; }elseif($mamae < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$mamaf" ?></td>
 		</tr>
-			<td bgcolor="tan" style='text-align:center;color:black;'><b>xiaomi<b></td>
-            <td bgcolor=<?php if($kakab > "1073741824"){ echo $bgcolor = "yellow"; }elseif($kakab < "1073741825"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($kakae > "0"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>xiaomi<b></td>
+            <td bgcolor=<?php if($kakab > "1073741824"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }elseif($kakab < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$kakac" ?> </td>
-			<td bgcolor=<?php if($kakae > "1048576"){ echo $bgcolor = "yellow"; }elseif($kakae < "1048577"){ echo $bgcolor = "#04ff00"; }?> style='text-align:center;color:black;'><?php 
+			<td bgcolor=<?php if($kakae > "1048576"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }elseif($kakae < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$kakaf" ?></td>			
 		</tr>
             <td bgcolor="plum"style='text-align:center;'><b>BIND<b></td>
 			<td bgcolor="plum"style='text-align:center;'><b><?php 
                     echo "$semua" ?><b></td>
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
-                    echo "$binrates" ?></td></tr><tr><tr>	
+                    echo "$binrates" ?></td></tr><tr><tr>
+		</tr><tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>bawah kosong : <?php 
+                    echo "".$bawahkosong." pc
+                      " . $x['hapus']; 
+                    ?></td>	
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>atas kosong : <?php 
+                    echo "".$ataskosong." pc
+                      " . $x['hapus']; 
+                    ?></td>
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>Ter-isi <?php 
+                    echo "".$jterisi." pc dari 19 pc
+                      " . $x['hapus']; 
+                    ?></td>				
 
 	</table>			
 </body>
 </html> 
 </table>
 	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
+		
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Rate-Down-Up-I</td>
-            <td bgcolor="pink" style='text-align:center;color:black;'><?php 
+			<td bgcolor="orange" style='text-align:center;color:black;'><b>Indihome</td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><b>Status</td>
+		</tr>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'><b>IP-I</td>
+            <td bgcolor="Cyan" style='text-align:center;color:black;'><b><?php 
+                    echo "".$ip."
+                      " . $x['hapus']; 
+                    ?></td>
+		
+		</tr>
+			<td bgcolor="Cyan" style='text-align:center;color:black;'>Rate-Down-Up-I</td>
+            <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$mayuk." - ".$muyak."
                       " . $x['hapus']; 
                     ?></td>			
@@ -649,14 +698,8 @@ $rsj = $API->comm("/interface/print");  //
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
-		
-		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>IP-I</td>
-            <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
-                    echo "".$ip."
-                      " . $x['hapus']; 
-                    ?></td>	
-        </tr>
+			
+        </tr><tr><tr><tr>
 			<td bgcolor="pink" style='text-align:center;color:black;'>Resource</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php
                     echo $_cpu_load." : " . $resource['cpu-load'] . "%<br/>
@@ -664,8 +707,8 @@ $rsj = $API->comm("/interface/print");  //
                     ".$_free_hdd." : " . formatBytes($resource['free-hdd-space'], 2)
                     ?></td>
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>Clock</td>
-            <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
+			<td bgcolor="pink" style='text-align:center;color:black;'>Clock</td>
+            <td bgcolor="pink" style='text-align:center;color:black;'><?php 
                     echo ucfirst($clock['date']) . " " . $clock['time'] . "<br>
                     ".$_uptime." : " . formatDTM($resource['uptime']);
                     $_SESSION[$session.'sdate'] = $clock['date'];
@@ -750,17 +793,17 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$comment = $hotspotactive['comment'];
 	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";
 	echo "<tr>";
-	echo "<td style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
-	echo "<td style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
-	echo "<td style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
-	echo "<td style='text-align:right;'>" . $bytesooo . " </td>";
-	echo "<td style='text-align:center;'>" . $idletime . " </td>";
-	echo "<td style='text-align:center;'>" . $uptime . "</td>";
-	echo "<td style='text-align:right;'>" . $byteso . "</td>";
-	echo "<td style='text-align:right;'>" . $bytesi . "</td>";
-	echo "<td style='text-align:center;'>" . $address . "</td>";
-	echo "<td style='text-align:center;'>" . $loginby . "</td>";
-	echo "<td style='text-align:left;'>" . $comment . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $bytesooo . " </td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $idletime . " </td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $uptime . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $byteso . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $bytesi . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $address . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $loginby . "</td>";
+	echo "<td bgcolor='Gainsboro' style='text-align:left;'>" . $comment . "</td>";
 	echo "</tr>";
 }
 ?>
