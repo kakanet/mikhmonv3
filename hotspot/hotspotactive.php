@@ -316,6 +316,34 @@ $rsj = $API->comm("/interface/print");  //
   $kakad = round((($kakab)/1048576), 2);
   $kakae = $kakaa['total-rate'];
   $kakaf = formatBites($kakae);
+  
+  $j1 = ($pc1e/$pc1e)*100/100;
+  $j3 = ($pc3e/$pc3e)*100/100;
+  $j5 = ($pc5e/$pc5e)*100/100;
+  
+  $j10 = ($pc10e/$pc10e)*100/100;
+  $j11 = ($pc11e/$pc11e)*100/100;
+  $j12 = ($pc12e/$pc12e)*100/100;
+  $j13 = ($pc13e/$pc13e)*100/100;
+  $j14 = ($pc14e/$pc14e)*100/100;
+  $j15 = ($pc15e/$pc15e)*100/100;
+  $j16 = ($pc16e/$pc16e)*100/100;
+  $j17 = ($pc17e/$pc17e)*100/100;
+  $j18 = ($pc18e/$pc18e)*100/100;
+  $j19 = ($pc19e/$pc19e)*100/100;
+  $j20 = ($pc20e/$pc20e)*100/100;
+  $j21 = ($pc21e/$pc21e)*100/100;
+  $j22 = ($pc22e/$pc22e)*100/100;
+  $j23 = ($pc23e/$pc23e)*100/100;
+  $j24 = ($pc24e/$pc24e)*100/100;
+  $j25 = ($pc25e/$pc25e)*100/100;
+  $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
+  $jkosong = (19-$jterisi);
+  
+  $bawahterisi = (($j1)+($j3)+($j5));
+  $bawahkosong =(3-($bawahterisi));
+  $atasterisi = (($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25));
+  $ataskosong = (16-($atasterisi));
 
 		
 // get MikroTik system clock
@@ -621,6 +649,21 @@ $rsj = $API->comm("/interface/print");  //
                     echo "$semua" ?><b></td>
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
                     echo "$binrates" ?></td>
+		</tr><tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>bawah kosong : <?php 
+                    echo "".$bawahkosong." | ter-isi : ".$bawahterisi."
+                      " . $x['hapus']; 
+                    ?></td>	
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>atas kosong : <?php 
+                    echo "".$ataskosong." | ter-isi : ".$atasterisi."
+                      " . $x['hapus']; 
+                    ?></td>
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>kosong <?php 
+                    echo "".$jkosong." | terisi : ".$jterisi." 
+                      " . $x['hapus']; 
+                    ?></td>				
 				
 				
 
