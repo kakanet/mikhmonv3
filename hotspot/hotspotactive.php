@@ -338,7 +338,7 @@ $rsj = $API->comm("/interface/print");  //
   $j25 = ($pc25e/$pc25e);
   $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
   $jkosong = (19-$jterisi);		
-  $coba = ($j1+j5);
+  $coba = (($j1)+(j5));
   
   $bawahkosong =(3-(($j1)+($j3)+($j5)));
   $ataskosong = (16-(($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25)));
