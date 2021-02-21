@@ -658,7 +658,7 @@ $rsj = $API->comm("/interface/print");  //
                     ?></td>
 		</tr>
 			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>Ter-isi <?php 
-                    echo "".$jterisi." pc dari 19 pc
+                    echo "".$j1." pc dari 19 pc
                       " . $x['hapus']; 
                     ?></td>				
 
