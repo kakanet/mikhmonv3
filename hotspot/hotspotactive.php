@@ -337,13 +337,13 @@ $rsj = $API->comm("/interface/print");  //
   $j23 = ($pc23e/$pc23e)*100/100;
   $j24 = ($pc24e/$pc24e)*100/100;
   $j25 = ($pc25e/$pc25e)*100/100;
-  $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
-  $jkosong = (19-$jterisi);
+  $jterisi = number_format($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
+  $jkosong = number_format(19-$jterisi);
   
-  $bawahterisi = (($j1)+($j3)+($j5));
-  $bawahkosong =(3-($bawahterisi));
-  $atasterisi = (($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25));
-  $ataskosong = (16-($atasterisi));
+  $bawahterisi = number_format(($j1)+($j3)+($j5));
+  $bawahkosong = number_format(3-($bawahterisi));
+  $atasterisi = number_format (($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25));
+  $ataskosong = number_format (16-($atasterisi));
 
 		
 // get MikroTik system clock
