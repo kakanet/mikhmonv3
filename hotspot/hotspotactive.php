@@ -336,6 +336,9 @@ $rsj = $API->comm("/interface/print");  //
   $j23 = ($pc23e/$pc23e);
   $j24 = ($pc24e/$pc24e);
   $j25 = ($pc25e/$pc25e);
+  
+  $nilai = array($j1,j3,$j5,$j10,$j11,$j12,$j13,$j14,$j15,$j16,$j17,$j18,$j19,$j20,$j21,$j22,$j23,$j24,$j25,);
+  $jml_nilai    =array_sum($nilai);
 
   $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
   $jkosong = (19-$jterisi);
@@ -655,7 +658,7 @@ $rsj = $API->comm("/interface/print");  //
                     echo "$ataskosong" ?> pc</td>
 		</tr>
 			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>Ter-isi <?php 
-                    echo "$jterisi"?> pc dari 19 pc</td>			
+                    echo "$jml_nilai"?> pc dari 19 pc</td>			
 				
 
 	</table>			
