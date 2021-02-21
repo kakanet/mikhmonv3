@@ -337,6 +337,11 @@ $rsj = $API->comm("/interface/print");  //
   $j24 = ($pc24e/$pc24e);
   $j25 = ($pc25e/$pc25e);
 
+  $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
+  $jkosong = (19-$jterisi);
+  
+  $bawahkosong =(3-(($j1)+($j3)+($j5)));
+  $ataskosong = (16-(($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25)));
 
 		
 // get MikroTik system clock
@@ -641,7 +646,17 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor="plum"style='text-align:center;'><b><?php 
                     echo "$semua" ?><b></td>
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
-                    echo "$binrates" ?></td>		
+                    echo "$binrates" ?></td>
+		</tr><tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>bawah kosong : <?php 
+                    echo "$bawahkosong" ?> pc</td>	
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>atas kosong : <?php 
+                    echo "$ataskosong" ?> pc</td>
+		</tr>
+			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>Ter-isi <?php 
+                    echo "$jterisi"?> pc dari 19 pc</td>			
+				
 
 	</table>			
 </body>
