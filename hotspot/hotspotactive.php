@@ -316,35 +316,6 @@ $rsj = $API->comm("/interface/print");  //
   $kakad = round((($kakab)/1048576), 2);
   $kakae = $kakaa['total-rate'];
   $kakaf = formatBites($kakae);
-  
-  $j1 = ($pc1e/$pc1e);
-  $j3 = ($pc3e/$pc3e);
-  $j5 = ($pc5e/$pc5e);
-  $j10 = ($pc10e/$pc10e);
-  $j11 = ($pc11e/$pc11e);
-  $j12 = ($pc12e/$pc12e);
-  $j13 = ($pc13e/$pc13e);
-  $j14 = ($pc14e/$pc14e);
-  $j15 = ($pc15e/$pc15e);
-  $j16 = ($pc16e/$pc16e);
-  $j17 = ($pc17e/$pc17e);
-  $j18 = ($pc18e/$pc18e);
-  $j19 = ($pc19e/$pc19e);
-  $j20 = ($pc20e/$pc20e);
-  $j21 = ($pc21e/$pc21e);
-  $j22 = ($pc22e/$pc22e);
-  $j23 = ($pc23e/$pc23e);
-  $j24 = ($pc24e/$pc24e);
-  $j25 = ($pc25e/$pc25e);
-  
-  $nilai = array($j1,j3,$j5,$j10,$j11,$j12,$j13,$j14,$j15,$j16,$j17,$j18,$j19,$j20,$j21,$j22,$j23,$j24,$j25,);
-  $jml_nilai    =array_sum($nilai);
-
-  $jterisi = ($j1+$j3+$j5+$j10+$j11+$j12+$j13+$j14+$j15+$j16+$j17+$j18+$j19+$j20+$j21+$j22+$j23+$j24+$j25);
-  $jkosong = (19-$jterisi);
-  
-  $bawahkosong =(3-(($j1)+($j3)+($j5)));
-  $ataskosong = (16-(($j10)+($j11)+($j12)+($j13)+($j14)+($j15)+($j16)+($j17)+($j18)+($j19)+($j20)+($j21)+($j22)+($j23)+($j24)+($j25)));
 
 		
 // get MikroTik system clock
@@ -650,15 +621,7 @@ $rsj = $API->comm("/interface/print");  //
                     echo "$semua" ?><b></td>
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
                     echo "$binrates" ?></td>
-		</tr><tr>
-			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>bawah kosong : <?php 
-                    echo "$bawahkosong" ?> pc</td>	
-		</tr>
-			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>atas kosong : <?php 
-                    echo "$ataskosong" ?> pc</td>
-		</tr>
-			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>Ter-isi <?php 
-                    echo "$jml_nilai"?> pc dari 19 pc</td>			
+				
 				
 
 	</table>			
