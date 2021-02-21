@@ -598,7 +598,7 @@ $rsj = $API->comm("/interface/print");  //
                       " . $x['hapus']; 
                     ?></td>			
 		</tr>
-			<td bgcolor=<?php if($servere > "0"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>billing<b></td>
+			<td bgcolor=<?php if($servere > "0"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>billing<b></td>
             <td bgcolor=<?php if($servere < "1"){ echo $bgcolor = "white"; }elseif($serverb > "1073741824"){ echo $bgcolor = "tan"; }elseif($serverb < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$serverc" ?> </td>
 			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "white"; }elseif($servere < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
