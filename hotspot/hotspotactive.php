@@ -15,6 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+error_reporting(E_ALL && ~E_NOTICE);
 session_start();
 // hide all error
 error_reporting(0);
@@ -102,7 +103,7 @@ $rsj = $API->comm("/interface/print");  //
 		$realtotalx = formatBytes(($rt), 2);
 		
   $wifi = $API->comm("/queue/simple/print");
-  $wifib= $wifi[24];
+  $wifib= $wifi[32];
   $wific= $wifib['total-bytes'];
   $wifid = formatBytes(($wific), 2); // jumlah wifi
   $wifie = $wifib['total-rate'];
@@ -316,6 +317,34 @@ $rsj = $API->comm("/interface/print");  //
   $kakad = round((($kakab)/1048576), 2);
   $kakae = $kakaa['total-rate'];
   $kakaf = formatBites($kakae);
+  
+  $cctv = $API->comm("/queue/simple/print");  //cctv
+  $cctv1= $cctv[25];
+  $cctv2 = $cctv1['total-rate'];
+  
+  $apmama = $API->comm("/queue/simple/print");  //apmama
+  $apmama1= $apmama[26];
+  $apmama2 = $apmama1['total-rate'];
+  
+  $apwifia = $API->comm("/queue/simple/print");  //apwifi1
+  $apwifi1= $apwifia[27];
+  $apwifi11 = $apwifi1['total-rate'];
+  
+  $apwifib = $API->comm("/queue/simple/print");  //apwifi2
+  $apwifi2= $apwifib[28];
+  $apwifi22 = $apwifi2['total-rate'];
+  
+  $apwific = $API->comm("/queue/simple/print");  //apwifi3
+  $apwifi3= $apwific[29];
+  $apwifi33 = $apwifi3['total-rate'];
+  
+  $apwifid = $API->comm("/queue/simple/print");  //apwifi4
+  $apwifi4= $apwifid[30];
+  $apwifi44 = $apwifi4['total-rate'];
+  
+  $apwifie = $API->comm("/queue/simple/print");  //apwifi5
+  $apwifi5= $apwifie[31];
+  $apwifi55 = $apwifi5['total-rate'];
   
   $j1 = number_format($pc1e/$pc1e)*100/100;
   $j3 = number_format($pc3e/$pc3e)*100/100;
@@ -650,18 +679,21 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
                     echo "$binrates" ?></td>
 		</tr><tr>
-			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>bawah kosong : <?php 
-                    echo "".$bawahkosong." | ter-isi : ".$bawahterisi."
-                      " . $x['hapus']; 
-                    ?></td>	
+			<td bgcolor="pink" style='text-align:center;color:black;'><b>bawah</td>
+			<td bgcolor="pink" style='text-align:center;color:black;'><i class="fa fa-warning"></i> off <?php 
+                    echo "$bawahkosong"?> pc</td> 	
+			<td bgcolor="pink" style='text-align:center;color:black;'><i class="fa fa-television"></i> on <?php 
+                    echo "$bawahterisi" ?> pc</td> 		
 		</tr>
-			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>atas kosong : <?php 
-                    echo "".$ataskosong." | ter-isi : ".$atasterisi."
-                      " . $x['hapus']; 
-                    ?></td>
+		    <td bgcolor="pink" style='text-align:center;color:black;'><b>atas</td>
+			<td bgcolor="pink" style='text-align:center;color:black;'><i class="fa fa-warning"></i> off <?php 
+                    echo "$ataskosong"?> pc</td> 
+			<td bgcolor="pink" style='text-align:center;color:black;'><i class="fa fa-television"></i> on <?php 
+                    echo "$atasterisi"?> pc</td> 				
 		</tr>
-			<td bgcolor="orange" colspan="3" style='text-align:center;color:black;'><b>kosong <?php 
-                    echo "".$jkosong." | terisi : ".$jterisi." 
+			<td bgcolor="pink" style='text-align:center;color:blue;'><b><b>total<b></td>
+			<td bgcolor="pink" colspan="2" style='text-align:center;color:blue;'><b>off <?php 
+                    echo "".$jkosong." pc / on ".$jterisi." pc 
                       " . $x['hapus']; 
                     ?></td>				
 				
@@ -719,6 +751,16 @@ $rsj = $API->comm("/interface/print");  //
                     $_SESSION[$session.'sdate'] = $clock['date'];
                     ?></td></tr><tr><tr>	
     </table>
+	<table height=40px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+        <tr>
+           <td bgcolor=<?php if($cctv2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($cctv2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>CCTV</td>
+            <td bgcolor=<?php if($apmama2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP MAMA</td>
+			<td bgcolor=<?php if($apwifi11 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W1</td>
+			<td bgcolor=<?php if($apwifi22 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W2</td>
+			<td bgcolor=<?php if($apwifi33 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W3</td>
+			<td bgcolor=<?php if($apwifi44 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W4</td>
+			<td bgcolor=<?php if($apwifi55 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W5</td>		
+	 </table>	
 	
 	  
 </body>
