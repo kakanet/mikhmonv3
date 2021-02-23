@@ -754,12 +754,12 @@ $rsj = $API->comm("/interface/print");  //
 	<table height=40px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
            <td bgcolor=<?php if($cctv2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($cctv2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>CCTV</td>
-            <td bgcolor=<?php if($apmama2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP MAMA</td>
-			<td bgcolor=<?php if($apwifi11 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W1</td>
-			<td bgcolor=<?php if($apwifi22 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W2</td>
-			<td bgcolor=<?php if($apwifi33 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W3</td>
-			<td bgcolor=<?php if($apwifi44 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W4</td>
-			<td bgcolor=<?php if($apwifi55 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($pc19e < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W5</td>		
+            <td bgcolor=<?php if($apmama2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apmama2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP MAMA</td>
+			<td bgcolor=<?php if($apwifi11 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi11 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W1</td>
+			<td bgcolor=<?php if($apwifi22 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi22 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W2</td>
+			<td bgcolor=<?php if($apwifi33 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi33 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W3</td>
+			<td bgcolor=<?php if($apwifi44 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi44 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W4</td>
+			<td bgcolor=<?php if($apwifi55 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi55 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W5</td>		
 	 </table>	
 	
 	  
