@@ -661,7 +661,7 @@ $rsj = $API->comm("/interface/print");  //
 			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "tan"; }elseif($servere < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$serverf" ?></td>			
 		</tr>
-            <td bgcolor="plum"style='text-align:center;'><b>BIND<b></td>
+            <td bgcolor="plum"style='text-align:center;'><b>all pc<b></td>
 			<td bgcolor="plum"style='text-align:center;'><b><?php 
                     echo "$semua" ?><b></td>
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
@@ -694,45 +694,38 @@ $rsj = $API->comm("/interface/print");  //
 	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
 		
 		</tr>
-			<td bgcolor="orange" style='text-align:center;color:black;'><b>Indihome</td>
-            <td bgcolor="orange" style='text-align:center;color:black;'><b>Status</td>
+            <td bgcolor="orange" style='text-align:center;color:black;'><b>Indihome</td>
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'><b>IP-I</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><b><?php 
                     echo "".$ip."
                       " . $x['hapus']; 
                     ?></td>
 		
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>Rate-Down-Up-I</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$mayuk." - ".$muyak."
                       " . $x['hapus']; 
                     ?></td>			
 					
 		</tr>
-			<td bgcolor="Cyan" style='text-align:center;color:black;'>Total-Down-Up-I</td>
             <td bgcolor="Cyan" style='text-align:center;color:black;'><?php 
                     echo " ".$downloadall." - ".$uploadall."
                       " . $x['hapus']; 
                     ?></td>
 				
 		</tr>
-			<td bgcolor="plum" style='text-align:center;color:black;'><b>Total-Bytes-I</td>
             <td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
                     echo "".$realtotal." MiB / ".$realtotalx."
                       " . $x['hapus']; 
                     ?></td>
 			
         </tr><tr><tr><tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Resource</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php
                     echo $_cpu_load." : " . $resource['cpu-load'] . "%<br/>
                     ".$_free_memory." : " . formatBytes($resource['free-memory'], 2) . "<br/>
                     ".$_free_hdd." : " . formatBytes($resource['free-hdd-space'], 2)
                     ?></td>
 		</tr>
-			<td bgcolor="pink" style='text-align:center;color:black;'>Clock</td>
             <td bgcolor="pink" style='text-align:center;color:black;'><?php 
                     echo ucfirst($clock['date']) . " " . $clock['time'] . "<br>
                     ".$_uptime." : " . formatDTM($resource['uptime']);
