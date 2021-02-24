@@ -659,9 +659,21 @@ $rsj = $API->comm("/interface/print");  //
             <td bgcolor=<?php if($servere < "1"){ echo $bgcolor = "tan"; }elseif($serverb > "1073741824"){ echo $bgcolor = "tan"; }elseif($serverb < "1073741825"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
                     echo "$serverc" ?> </td>
 			<td bgcolor=<?php if($servere > "1048576"){ echo $bgcolor = "tan"; }elseif($servere < "1"){ echo $bgcolor = "tan"; }elseif($servere < "1048577"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
-                    echo "$serverf" ?></td>			
+                    echo "$serverf" ?></td>	
 		</tr>
-            <td bgcolor="plum"style='text-align:center;'><b>all pc<b></td>
+			<td bgcolor=<?php if($mamae > "0"){ echo $bgcolor = "tan"; }elseif($mamae < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>asus<b></td>
+            <td bgcolor=<?php if($mamae < "1"){ echo $bgcolor = "tan"; }elseif($mamab < "1073741825"){ echo $bgcolor = "tan"; }elseif($mamab > "1073741824"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$mamac" ?> </td>
+			<td bgcolor=<?php if($mamae < "1"){ echo $bgcolor = "tan"; }elseif($mamae < "1048577"){ echo $bgcolor = "tan"; }elseif($mamae > "1048576"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$mamaf" ?></td>
+		</tr>
+			<td bgcolor=<?php if($kakae > "0"){ echo $bgcolor = "tan"; }elseif($kakae < "1"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><b>xiaomi<b></td>
+            <td bgcolor=<?php if($kakae < "1"){ echo $bgcolor = "tan"; }elseif($kakab < "1073741825"){ echo $bgcolor = "tan"; }elseif($kakab > "1073741824"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$kakac" ?> </td>
+			<td bgcolor=<?php if($kakae < "1"){ echo $bgcolor = "tan"; }elseif($kakae < "1048577"){ echo $bgcolor = "tan"; }elseif($kakae > "1048576"){ echo $bgcolor = "tan"; }?> style='text-align:center;color:black;'><?php 
+                    echo "$kakaf" ?></td>			
+		</tr>
+            <td bgcolor="plum"style='text-align:center;'><b>BIND<b></td>
 			<td bgcolor="plum"style='text-align:center;'><b><?php 
                     echo "$semua" ?><b></td>
 			<td bgcolor="plum" style='text-align:center;color:black;'><b><?php 
@@ -777,19 +789,7 @@ $rsj = $API->comm("/interface/print");  //
 				} else {
 					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
 				}
-				?></br><i class="fa  fa-android"></i> <b>asus = <?php 
-                    echo "".$mamac."
-                      " . $x['hapus']; 
-                    ?> - <?php 
-                    echo "".$mamaf." 
-                      " . $x['hapus'];  
-                    ?></br><i class="fa  fa-android"></i> <b>xiaomi = <?php 
-                    echo "".$kakac."
-                      " . $x['hapus']; 
-                    ?> - <?php 
-                    echo "".$kakaf." 
-                      " . $x['hapus'];  
-                    ?></td></td>
+				?></td>
 	</table>
    
 
