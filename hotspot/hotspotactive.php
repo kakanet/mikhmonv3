@@ -103,7 +103,7 @@ $rsj = $API->comm("/interface/print");  //
 		$realtotalx = formatBytes(($rt), 2);
 		
   $wifi = $API->comm("/queue/simple/print");
-  $wifib= $wifi[32];
+  $wifib= $wifi[24];
   $wific= $wifib['total-bytes'];
   $wifid = formatBytes(($wific), 2); // jumlah wifi
   $wifie = $wifib['total-rate'];
@@ -743,17 +743,7 @@ $rsj = $API->comm("/interface/print");  //
                     ".$_uptime." : " . formatDTM($resource['uptime']);
                     $_SESSION[$session.'sdate'] = $clock['date'];
                     ?></td></tr><tr><tr>	
-    </table>
-	<table height=40px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-        <tr>
-           <td bgcolor=<?php if($cctv2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($cctv2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>CC TV</td>
-            <td bgcolor=<?php if($apmama2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apmama2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP M</td>
-			<td bgcolor=<?php if($apwifi11 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi11 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W1</td>
-			<td bgcolor=<?php if($apwifi22 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi22 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W2</td>
-			<td bgcolor=<?php if($apwifi33 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi33 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W3</td>
-			<td bgcolor=<?php if($apwifi44 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi44 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W4</td>
-			<td bgcolor=<?php if($apwifi55 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apwifi55 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP W5</td>		
-	 </table>	
+    </table>	
 	
 	  
 </body>
