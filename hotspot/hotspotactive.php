@@ -799,9 +799,8 @@ $rsj = $API->comm("/interface/print");  //
 <table color=red height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
-    <th bgcolor="orange" class="text-center"></th>
-    <th bgcolor="orange" class="text-center">User</th>
-    <th bgcolor="orange" class="text-center">Total</th>
+    <th bgcolor="orange" class="text-center">Nama</th>
+    <th bgcolor="orange" class="text-center">Pemakaian</th>
     <th bgcolor="orange" class="text-center">Idle Time</th>
   </tr>
   </thead>
@@ -826,8 +825,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$comment = $hotspotactive['comment'];
 	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";?>
 	<?php
-	echo "<tr>";?><?php
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";?>
+	echo "<tr>";?>
 	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
                     echo "".$user." 
                       " . $x['hapus']; 
