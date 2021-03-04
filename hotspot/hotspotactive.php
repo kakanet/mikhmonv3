@@ -795,21 +795,14 @@ $rsj = $API->comm("/interface/print");  //
 
 </div>
 </div>
- <div class="card-body overflow">  
-<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
+  
+<table color=red height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center"></th>
-    <th bgcolor="orange" class="text-center">Server</th>
     <th bgcolor="orange" class="text-center">User</th>
     <th bgcolor="orange" class="text-center">Total</th>
     <th bgcolor="orange" class="text-center">Idle Time</th>
-    <th bgcolor="orange" class="text-center">Uptime</th>
-    <th bgcolor="orange" class="text-center">Down</th>
-    <th bgcolor="orange"class="text-center">Up</th>
-    <th bgcolor="orange"class="text-center">Address</th>
-    <th bgcolor="orange"class="text-center">Login By</th>
-    <th bgcolor="orange"class="text-center"><?= $_comment ?></th>
   </tr>
   </thead>
   <tbody>
@@ -836,10 +829,6 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	echo "<tr>";?><?php
 	echo "<td bgcolor='Gainsboro' style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";?>
 	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$server." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
                     echo "".$user." 
                       " . $x['hapus']; 
                     ?></td>
@@ -851,31 +840,6 @@ for ($i = 0; $i < $TotalReg; $i++) {
                     echo "".$idletime." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$uptime." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$byteso." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$bytesi." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$address." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$loginby." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$comment." 
-                      " . $x['hapus']; 
-                    ?></td>
-</div>					
 <?php
 }
 ?>
@@ -961,7 +925,7 @@ if (!isset($_SESSION["mikhmon"])) {
         
 		
         
- <div class="card-body overflow">
+
 <table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
@@ -969,11 +933,6 @@ if (!isset($_SESSION["mikhmon"])) {
     <th bgcolor="orange" class="text-center">Nama</th>
     <th bgcolor="orange" class="text-center">Pemakaian</th>
     <th bgcolor="orange" class="text-center">Uptime</th>
-	<th bgcolor="orange" class="text-center">Down</th>
-	<th bgcolor="orange" class="text-center">Up</th>
-    <th bgcolor="orange" class="text-center">Mac address</th>
-    <th bgcolor="orange" class="text-center"><?= $_comment ?></th>
-	 <th bgcolor="orange" class="text-center">Profile</th>
   </tr>
   </thead>
   <tbody>
@@ -1009,31 +968,10 @@ for ($i = 0; $i < $TotalReg; $i++) {
                     echo "".$uptime." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$bytesojadi." 
-                      " . $x['hapus']; 
-                    ?></td>		
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$bytesijadi." 
-                      " . $x['hapus']; 
-                    ?></td>				
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$mac."  
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$comment." / ".$profile." 
-                      " . $x['hapus']; 
-                    ?></td>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$profile." 
-                      " . $x['hapus']; 
-                    ?></td>
 	<?php echo "</tr>";
 }
 ?>
 </table>
-</div>
 
 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
