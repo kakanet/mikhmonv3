@@ -801,7 +801,7 @@ $rsj = $API->comm("/interface/print");  //
   <tr>
     <th bgcolor="orange" class="text-center">Nama</th>
     <th bgcolor="orange" class="text-center">Pemakaian</th>
-    <th bgcolor="orange" class="text-center">Idle Time</th>
+    <th bgcolor="orange" class="text-center">Uptime</th>
   </tr>
   </thead>
   <tbody>
@@ -835,7 +835,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
                       " . $x['hapus']; 
                     ?></td>
 	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
-                    echo "".$idletime." 
+                    echo "".$uptime." 
                       " . $x['hapus']; 
                     ?></td>
 <?php
