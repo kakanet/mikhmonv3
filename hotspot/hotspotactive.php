@@ -795,8 +795,8 @@ $rsj = $API->comm("/interface/print");  //
 
 </div>
 </div>
-  
-<table height=20px border=1 cellpadding=0 cellspacing=0 align="left">
+ <div class="card-body overflow">  
+<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center"></th>
@@ -875,6 +875,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
                     echo "".$comment." 
                       " . $x['hapus']; 
                     ?></td>
+</div>					
 <?php
 }
 ?>
@@ -960,8 +961,8 @@ if (!isset($_SESSION["mikhmon"])) {
         
 		
         
-
-<table height=20px border=1 cellpadding=0 cellspacing=0 align="left">
+ <div class="card-body overflow">
+<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
     </th>
@@ -1032,6 +1033,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 }
 ?>
 </table>
+</div>
 
 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
