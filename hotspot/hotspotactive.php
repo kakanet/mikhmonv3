@@ -65,7 +65,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 	<div class="card">
 		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-laptop"></i> BINDING</h3>
+    		<h3><i class="fa fa-laptop"></i> WARNET SELONGAN</h3>
         </div>
 		
 		<?php
@@ -764,28 +764,26 @@ $rsj = $API->comm("/interface/print");  //
 <div class="row">
 <div id="reloadHotspotActive">
 <div class="col-12">
-	<div class="card">
-		<div class="card-header"style='text-align:center;'>
-    		<h3><i class="fa fa-rss"></i> HOTSPOT & NON BINDING</h3>
+	
         </div>
 
 </table>
 	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
-           <td bgcolor="plum" style='text-align:center;color:black;'><b><i class="fa fa-wifi"></i> <?php 
+           <td bgcolor="plum" style='text-align:center;color:black;'> <?php 
                     echo "".$wifid."
                       " . $x['hapus']; 
                     ?> | <?php 
                     echo "".$wifif."
                       " . $x['hapus'];  
-                    ?> <i class="fa fa-wifi"></i></br>pemakai hotspot : <?php
+                    ?> </br>pemakai hotspot : <?php
 				if ($serveractive == "") {
 				} else {
 					echo $serveractive . " ";
 				}
 				if ($counthotspotactive < 2) {
-					echo "$counthotspotactive user";
+					echo "$counthotspotactive orang";
 				} elseif ($counthotspotactive > 1) {
-					echo "$counthotspotactive users";
+					echo "$counthotspotactive orang";
 				};
 				if ($serveractive == "") {
 				} else {
@@ -797,8 +795,8 @@ $rsj = $API->comm("/interface/print");  //
 
 </div>
 </div>
-         <div class="card-body overflow">
-<table height=100px width=100% id="tFilter" class="table table-bordered table-hover text-nowrap">
+  
+<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center"></th>
@@ -833,25 +831,208 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$address = $hotspotactive['address'];	
 	$loginby = $hotspotactive['login-by'];
 	$comment = $hotspotactive['comment'];
-	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";
-	echo "<tr>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'><a  title='filter " . $server . "' href='./?hotspot=active&server=" . $server . "&session=" . $session . "'><i class='fa fa-server'></i> " . $server . "</a></td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'><a title='Open User " . $user . "' href=./?hotspot-user=" . $user . "&session=" . $session . "><i class='fa fa-edit'></i> " . $user . "</a></td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $bytesooo . " </td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $idletime . " </td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $uptime . "</td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $byteso . "</td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:right;'>" . $bytesi . "</td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $address . "</td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:center;'>" . $loginby . "</td>";
-	echo "<td bgcolor='Gainsboro' style='text-align:left;'>" . $comment . "</td>";
-	echo "</tr>";
+	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";?>
+	<?php
+	echo "<tr>";?><?php
+	echo "<td bgcolor='Gainsboro' style='text-align:center;'><span class='pointer'  title='Remove " . $user . "' onclick=loadpage(".$uriprocess.")><i class='fa fa-minus-square text-danger'></i></span></td>";?>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$server." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$user." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$bytesooo." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$idletime." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$uptime." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$byteso." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$bytesi." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$address." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$loginby." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$comment." 
+                      " . $x['hapus']; 
+                    ?></td>
+<?php
 }
 ?>
   </tbody>
+  <?php
+/*
+ *  Copyright (C) 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
+// hide all error
+error_reporting(0);
+if (!isset($_SESSION["mikhmon"])) {
+	header("Location:../admin.php?id=login");
+} else {
+
+// load session MikroTik
+	$session = $_GET['session'];
+	$serveractive = $_GET['server'];
+
+// load config
+	include('../include/config.php');
+	include('../include/readcfg.php');
+	
+// lang
+  include('../include/lang.php');
+  include('../lang/'.$langid.'.php');
+
+// routeros api
+	include_once('../lib/routeros_api.class.php');
+	include_once('../lib/formatbytesbites.php');
+	$API = new RouterosAPI();
+	$API->debug = false;
+	$API->connect($iphost, $userhost, decrypt($passwdhost));
+
+	if ($serveractive != "") {
+		$gethotspotactive = $API->comm("/ip/hotspot/user/print", array("?server" => "" . $serveractive . ""));
+		$TotalReg = count($gethotspotactive);
+
+		$counthotspotactive = $API->comm("/ip/hotspot/user/print", array(
+			"count-only" => "", "?server" => "" . $serveractive . ""
+		));
+
+	} else {
+		$gethotspotactive = $API->comm("/ip/hotspot/user/print");
+		$TotalReg = count($gethotspotactive);
+
+		$counthotspotactive = $API->comm("/ip/hotspot/user/print", array(
+			"count-only" => "",
+		));
+	}
+}
+?>
+<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+<h3> <td bgcolor="plum" style='text-align:center;color:black;'> hotspot terdaftar : <?php
+				if ($serveractive == "") {
+				} else {
+					echo $serveractive . " ";
+				}
+				if ($counthotspotactive < 2) {
+					echo "$counthotspotactive orang";
+				} elseif ($counthotspotactive > 1) {
+					echo "$counthotspotactive orang";
+				};
+				if ($serveractive == "") {
+				} else {
+					echo " | <a href='./?hotspot=active&session=" . $session . "'> <i class='fa fa-search'></i> Show all</a>";
+				}
+				?></td><h3>
+				</table>
+        
+		
+        
+
+<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
+  <thead>
+  <tr>
+    </th>
+    <th bgcolor="orange" class="text-center">Nama</th>
+    <th bgcolor="orange" class="text-center">Pemakaian</th>
+    <th bgcolor="orange" class="text-center">Uptime</th>
+	<th bgcolor="orange" class="text-center">Down</th>
+	<th bgcolor="orange" class="text-center">Up</th>
+    <th bgcolor="orange" class="text-center">Mac address</th>
+    <th bgcolor="orange" class="text-center"><?= $_comment ?></th>
+	 <th bgcolor="orange" class="text-center">Profile</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <?php
+for ($i = 0; $i < $TotalReg; $i++) {
+	$hotspotactive = $gethotspotactive[$i];
+	$id = $hotspotactive['.id'];
+	$name = $hotspotactive['name'];
+	$mac = $hotspotactive['mac-address'];
+	$uptime = formatDTM($hotspotactive['uptime']);
+	$bytesi = $hotspotactive['bytes-in'];
+	$byteso = $hotspotactive['bytes-out'];
+	$bytesijadi = formatbytes(($hotspotactive['bytes-in']), 2);
+	$bytesojadi = formatbytes(($hotspotactive['bytes-out']), 2);
+	$pemakaian = formatBytes(($byteso)+($bytesi), 2);
+	$pemakaianasli = (($byteso)+($bytesi));
+	$comment = $hotspotactive['comment'];
+	$profile = $hotspotactive['profile'];
+	$uriprocess = "'./?remove-hotspot-user=" . $id . "&session=" . $session . "'";
+	?>
+	 <?php
+	echo "<tr>";?>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$name." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$pemakaian." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$uptime." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$bytesojadi." 
+                      " . $x['hapus']; 
+                    ?></td>		
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$bytesijadi." 
+                      " . $x['hapus']; 
+                    ?></td>				
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$mac."  
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$comment." / ".$profile." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+                    echo "".$profile." 
+                      " . $x['hapus']; 
+                    ?></td>
+	<?php echo "</tr>";
+}
+?>
 </table>
-</div>
+
 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
