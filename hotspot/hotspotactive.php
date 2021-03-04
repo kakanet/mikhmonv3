@@ -796,7 +796,7 @@ $rsj = $API->comm("/interface/print");  //
 </div>
 </div>
   
-<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
+<table id="tFilter" class="table table-bordered table-hover text-nowrap">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center"></th>
@@ -961,7 +961,7 @@ if (!isset($_SESSION["mikhmon"])) {
 		
         
 
-<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
+<table id="tFilter" class="table table-bordered table-hover text-nowrap">
   <thead>
   <tr>
     </th>
