@@ -703,7 +703,7 @@ $rsj = $API->comm("/interface/print");  //
 </body>
 </html> 
 </table>
-	<table height=200px width=100% border=1 cellpadding=0 cellspacing=5 align="left">	
+	<table height=200px width=100% border=0 cellpadding=0 cellspacing=5 align="left">	
 		
 		</tr>
             <td bgcolor="orange" style='text-align:center;color:black;'><b>Indihome</td>
@@ -746,7 +746,7 @@ $rsj = $API->comm("/interface/print");  //
     </table>
 	
 	</table>
-	     <table height=25px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+	     <table height=25px width=100% border=0 cellpadding=0 cellspacing=5 align="left">
         </tr>
            <td bgcolor=<?php if($cctv2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($cctv2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>CC TV<b></td>
            <td bgcolor=<?php if($apmama2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apmama2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b>AP MM<b></td>
@@ -768,7 +768,7 @@ $rsj = $API->comm("/interface/print");  //
         </div>
 
 </table>
-	<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+	<table height=20px width=100% border=0 cellpadding=0 cellspacing=5 align="left">
            <td bgcolor="plum" style='text-align:center;color:black;'> <?php 
                     echo "".$wifid."
                       " . $x['hapus']; 
@@ -793,10 +793,8 @@ $rsj = $API->comm("/interface/print");  //
 	</table>
    
 
-</div>
-</div>
   
-<table color=red height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
+<table height=20px width=100% border=0 cellpadding=0 cellspacing=5 align="left">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center">Nama</th>
@@ -826,15 +824,15 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";?>
 	<?php
 	echo "<tr>";?>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
                     echo "".$user." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
                     echo "".$bytesooo." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style = "text-align:center"; }?>><?php 
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
                     echo "".$uptime." | ".$comment."
                       " . $x['hapus']; 
                     ?></td>
@@ -903,7 +901,7 @@ if (!isset($_SESSION["mikhmon"])) {
 	}
 }
 ?>
-<table height=20px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+<table height=20px width=100% border=0 cellpadding=0 cellspacing=5 align="left">
 <h3> <td bgcolor="plum" style='text-align:center;color:black;'> hotspot terdaftar : <?php
 				if ($serveractive == "") {
 				} else {
@@ -924,7 +922,7 @@ if (!isset($_SESSION["mikhmon"])) {
 		
         
 
-<table height=20px width=100% border=1 cellpadding=0 cellspacing=0 align="left">
+<table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=0 align="left">
   <thead>
   <tr>
     </th>
@@ -954,15 +952,15 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	?>
 	 <?php
 	echo "<tr>";?>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
                     echo "".$name." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
                     echo "".$pemakaian." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "yellow"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style = "text-align:center"; }?>><?php 
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
                     echo "".$uptime." | ".$comment."
                       " . $x['hapus']; 
                     ?></td>
@@ -971,7 +969,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 ?>
 </table>
 
-<table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+<table height=100px width=100% border=0 cellpadding=0 cellspacing=5 align="left">
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Indihome<b></td>
@@ -992,7 +990,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
                     ?></td>
 		 </table>
 
-			 <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+			 <table height=100px width=100% border=0 cellpadding=0 cellspacing=5 align="left">
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
