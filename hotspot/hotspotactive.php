@@ -470,7 +470,7 @@ $rsj = $API->comm("/interface/print");  //
     <title>Mengenal Tabel HTML</title>
 </head>
 <body>
-    <table height=100px width=100% border=1 cellpadding=0 cellspacing=5 align="left">
+    <table height=100px width=90% border=1 cellpadding=0 cellspacing=5 align="center">
          <tr>
             <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes<b></td>
@@ -797,9 +797,11 @@ $rsj = $API->comm("/interface/print");  //
 <table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
   <thead>
   <tr>
-    <th bgcolor="orange" class="text-center">Nama</th>
-    <th bgcolor="orange" class="text-center">Pemakaian</th>
-    <th bgcolor="orange" class="text-center">Uptime | Comment</th>
+    <th bgcolor="orange" class="text-center"><font size="1">Nama</th>
+    <th bgcolor="orange" class="text-center"><font size="1">Pemakaian</th>
+	<th bgcolor="orange" class="text-center"><font size="1">Idle</th>
+	<th bgcolor="orange" class="text-center"><font size="1">Uptime</th>
+    <th bgcolor="orange" class="text-center"><font size="1">Comment</th>
   </tr>
   </thead>
   <tbody>
@@ -824,18 +826,26 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$uriprocess = "'./?remove-user-active=" . $id . "&session=" . $session . "'";?>
 	<?php
 	echo "<tr>";?>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
                     echo "".$user." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
                     echo "".$bytesooo." 
                       " . $x['hapus']; 
                     ?></td>
 	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
-                    echo "".$uptime." | ".$comment."
+                    echo "".$idletime."
+                      " . $x['hapus']; 
+                    ?></td>				
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
+                    echo "".$uptime."
                       " . $x['hapus']; 
                     ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
+                    echo "".$comment."
+                      " . $x['hapus']; 
+                    ?></td>				
 <?php
 }
 ?>
@@ -926,9 +936,10 @@ if (!isset($_SESSION["mikhmon"])) {
   <thead>
   <tr>
     </th>
-    <th bgcolor="orange" class="text-center">Nama</th>
-    <th bgcolor="orange" class="text-center">Pemakaian</th>
-    <th bgcolor="orange" class="text-center">Uptime | Comment</th>
+    <th bgcolor="orange" class="text-center"><font size="1">Nama</th>
+    <th bgcolor="orange" class="text-center"><font size="1">Pemakaian</th>
+	<th bgcolor="orange" class="text-center"><font size="1">Uptime</th>
+    <th bgcolor="orange" class="text-center"><font size="1">Comment</th>
   </tr>
   </thead>
   <tbody>
@@ -952,18 +963,22 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	?>
 	 <?php
 	echo "<tr>";?>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
                     echo "".$name." 
                       " . $x['hapus']; 
                     ?></td>
-	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><?php 
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
                     echo "".$pemakaian." 
                       " . $x['hapus']; 
                     ?></td>
 	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
-                    echo "".$uptime." | ".$comment."
+                    echo "".$uptime." 
                       " . $x['hapus']; 
                     ?></td>
+	<td bgcolor=<?php if($pemakaianasli < "1"){ echo $bgcolor = "black"; }elseif($pemakaianasli < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($pemakaianasli > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($pemakaianasli < "1"){ echo $style = "display:none"; }elseif($pemakaianasli > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
+                    echo "".$comment." 
+                      " . $x['hapus']; 
+                    ?></td>				
 	<?php echo "</tr>";
 }
 ?>
