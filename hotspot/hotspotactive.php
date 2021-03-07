@@ -794,7 +794,7 @@ $rsj = $API->comm("/interface/print");  //
    
 
   
-<table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+<table height=20px width=50% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center"><font size="1">Nama</th>
