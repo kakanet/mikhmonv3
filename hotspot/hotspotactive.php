@@ -801,6 +801,8 @@ $rsj = $API->comm("/interface/print");  //
     <th bgcolor="orange" class="text-center"><font size="1">Pemakaian</th>
 	<th bgcolor="orange" class="text-center"><font size="1">Idle</th>
 	<th bgcolor="orange" class="text-center"><font size="1">Uptime</th>
+	<th bgcolor="orange" class="text-center"><font size="1">Address</th>
+	<th bgcolor="orange" class="text-center"><font size="1">Mac</th>
     <th bgcolor="orange" class="text-center"><font size="1">Comment</th>
   </tr>
   </thead>
@@ -810,6 +812,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 	$hotspotactive = $gethotspotactive[$i];
 	$id = $hotspotactive['.id'];
 	$server = $hotspotactive['server'];
+	$mac = $hotspotactive['mac-address'];
 	$user = $hotspotactive['user'];
 	$uptime = formatDTM($hotspotactive['uptime']);
 	$idletime = formatDTM($hotspotactive['idle-time']);
@@ -842,6 +845,14 @@ for ($i = 0; $i < $TotalReg; $i++) {
                     echo "".$uptime."
                       " . $x['hapus']; 
                     ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
+                    echo "".$address."
+                      " . $x['hapus']; 
+                    ?></td>
+	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
+                    echo "".$mac."
+                      " . $x['hapus']; 
+                    ?></td>				
 	<td bgcolor=<?php if($rrr < "1"){ echo $bgcolor = "black"; }elseif($rrr < "1073741825"){ echo $bgcolor = "Gainsboro"; }elseif($rrr > "1073741824"){ echo $bgcolor = "Silver"; }?> style=<?php if($rrr < "1"){ echo $style = "display:none"; }elseif($rrr > "0"){ echo $style="text-align:center;color:black"; }?>><font size="1"><?php 
                     echo "".$comment."
                       " . $x['hapus']; 
