@@ -470,7 +470,7 @@ $rsj = $API->comm("/interface/print");  //
     <title>Mengenal Tabel HTML</title>
 </head>
 <body>
-    <table height=100px width=90% border=1 cellpadding=0 cellspacing=5 align="center">
+    <table height=100px width=99% border=1 cellpadding=0 cellspacing=5 align="center">
          <tr>
             <td bgcolor="orange"style='text-align:center;'><b>No-PC<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes<b></td>
@@ -703,7 +703,7 @@ $rsj = $API->comm("/interface/print");  //
 </body>
 </html> 
 </table>
-	<table height=200px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">	
+	<table height=200px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">	
 		
 		</tr>
             <td bgcolor="orange" style='text-align:center;color:black;'><b>Indihome</td>
@@ -746,7 +746,7 @@ $rsj = $API->comm("/interface/print");  //
     </table>
 	
 	</table>
-	     <table height=25px width=100%border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+	     <table height=25px width=99%border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">
         </tr>
            <td bgcolor=<?php if($cctv2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($cctv2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b><font size="1">CCTV<b></td>
            <td bgcolor=<?php if($apmama2 > "0"){ echo $bgcolor = "Aquamarine"; }elseif($apmama2 < "1"){ echo $bgcolor = "red"; }?> style='text-align:center;color:black;'><b><font size="1">APMM<b></td>
@@ -768,7 +768,7 @@ $rsj = $API->comm("/interface/print");  //
         </div>
 
 </table>
-	<table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+	<table height=20px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">
            <td bgcolor="plum" style='text-align:center;color:black;'> <?php 
                     echo "".$wifid."
                       " . $x['hapus']; 
@@ -794,7 +794,7 @@ $rsj = $API->comm("/interface/print");  //
    
 
   
-<table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+<table height=20px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">
   <thead>
   <tr>
     <th bgcolor="orange" class="text-center"><font size="1">Nama</th>
@@ -911,7 +911,7 @@ if (!isset($_SESSION["mikhmon"])) {
 	}
 }
 ?>
-<table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+<table height=20px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">
 <h3> <td bgcolor="plum" style='text-align:center;color:black;'> hotspot terdaftar : <?php
 				if ($serveractive == "") {
 				} else {
@@ -932,7 +932,7 @@ if (!isset($_SESSION["mikhmon"])) {
 		
         
 
-<table height=20px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=0 align="left">
+<table height=20px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=0 align="center">
   <thead>
   <tr>
     </th>
@@ -984,7 +984,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 ?>
 </table>
 
-<table height=100px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+<table height=100px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>Total-Bytes-Mikrotik<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Bytes-Indihome<b></td>
@@ -1005,7 +1005,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
                     ?></td>
 		 </table>
 
-			 <table height=100px width=100% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="left">
+			 <table height=100px width=99% border=1 bordercolor="white" cellpadding=0 cellspacing=5 align="center">
         <tr>
             <td bgcolor="orange"style='text-align:center;'><b>Total-Speed-Mikrotik<b></td> 
             <td bgcolor="orange" style='text-align:center;'><b>Total-Speed-Indihome<b></td>
@@ -1025,3 +1025,21 @@ for ($i = 0; $i < $TotalReg; $i++) {
 </div>
 </div>
 </div>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;    
+    background-color: #f1f1c1;
+}
+</style>
